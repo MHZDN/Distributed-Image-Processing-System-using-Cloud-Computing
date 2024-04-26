@@ -16,7 +16,7 @@ class CL_Image_Preprocessing:
          
         """
 
-        gray = (img.shape == 2)
+        gray = (len(img.shape) == 2)
         
         if gray:
 
