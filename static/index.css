@@ -1,0 +1,33 @@
+body{
+    margin: 5vh auto;
+
+}
+button{
+    padding: 15px 40px;
+    border-radius: 12px;
+}
+div{
+    display: flex;
+    padding: 25px 0;
+    align-items: center;
+    justify-content: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+p{
+    padding: 20px;
+    font-size: 20;
+}
+input{
+    font-size: 20;
+}
+.addedImagesDiv{
+    display: flex;
+    justify-content: space-between;
+}
+img{
+    max-width: 40vw;
+    max-height: 40vh;
+    margin: 20px 20px;
+}
