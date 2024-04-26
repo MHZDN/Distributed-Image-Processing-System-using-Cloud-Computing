@@ -16,7 +16,7 @@ dark_gray =CL.Intensity_pyopencl(gray,0)
 
 dark_img =CL.Intensity_pyopencl(img,0)
 
-
+# print(CL.Intensity_pyopencl.__doc__)
 
 cv2.imshow("orginal",img)
 cv2.imshow("gray",gray)

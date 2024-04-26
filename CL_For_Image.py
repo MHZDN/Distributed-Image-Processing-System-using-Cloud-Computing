@@ -10,6 +10,12 @@ class CL_Image_Preprocessing:
 
     def To_gray_pyopencl(self,img):
 
+        """
+        This function takes a 3 channel image 
+        and then convert it a gray scale 1 Channel image 
+         
+        """
+
         gray = (img.shape == 2)
         
         if gray:
@@ -68,6 +74,13 @@ class CL_Image_Preprocessing:
         return Grey_img
     
     def Intensity_pyopencl(self ,img , value):
+
+        """
+            This Function takes an image with value either 0 or 1 
+            1-> decides that You want to brighten the image 
+            0-> decide that You want to Darken the image 
+
+        """
 
         img = img.astype(np.float32)
         
