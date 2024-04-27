@@ -32,22 +32,27 @@
         {%endfor%}
       </div>
     </div>
+    <form action="/startProcessing" method="post">
+
+    
     <div class="flex-column">
       <p>Operation</p>
       <select name="Operation" id="selectedOperation">
-        <option value="brighten">Brighten</option>
-        <option value="darken">Darken</option>
+        {% for op in operations %}
+        <option value="{{op}}">{{op}}</option>
+        {%endfor%}
       </select>
     </div>
     <div>
       <button id="startProcessingBtn">Start Processing</button>
     </div>
+  </form>
     <div class="flex-column">
       <p>Output</p>
       <div id="outputDiv">
-        <!-- {% if img %}
+        {% for img in outputImages %}
                 <img src={{img}} alt="">
-            {% endif %} -->
+            {% endfor %}
       </div>
     </div>
     {% endblock %}
