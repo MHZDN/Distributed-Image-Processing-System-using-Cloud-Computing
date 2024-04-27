@@ -172,7 +172,7 @@ class CL_Image_Preprocessing:
 
             gray_img = self.To_gray_pyopencl(img) # if not will turn it to gray image and reshap it to be 1D format
             gray_img = gray_img.astype(np.float32) 
-            original_height, original_width , channels = gray_img.shape
+            original_height, original_width  = gray_img.shape
             v_flat = gray_img.reshape(-1)
 
         #kernel that does the threshhold 
