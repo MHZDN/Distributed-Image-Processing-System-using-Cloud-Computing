@@ -17,6 +17,7 @@ dark_gray = CL.Intensity_pyopencl(gray, 0)
 
 dark_img = CL.Intensity_pyopencl(img, 0)
 
+thresh = CL.Threshhold(img)
 # print(CL.Intensity_pyopencl.__doc__)
 
 cv2.imshow("orginal", img)
@@ -25,6 +26,8 @@ cv2.imshow("bright_gray", bright_gray)
 cv2.imshow("bright_img", bright_img)
 cv2.imshow("dark_gray", dark_gray)
 cv2.imshow("dark_img", dark_img)
+cv2.imshow("thresh_img", thresh)
+
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

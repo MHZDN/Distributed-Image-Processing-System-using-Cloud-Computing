@@ -164,7 +164,7 @@ class CL_Image_Preprocessing:
 
         if gray : # if grey will make it 1D format 
 
-            original_height, original_width, channels = img_32.shape
+            original_height, original_width = img_32.shape
             v_flat = img_32.reshape(-1) #1D format image and put it in a variable to use later 
 
 
