@@ -26,14 +26,25 @@ class CL_Image_Preprocessing:
 
         B, G, R = cv2.split(img)
 
-        grey_R = gp1.process_grey_R(self, R, original_height, original_width)
-        grey_G = gp3.process_grey_G(self, G, original_height, original_width)
-        grey_B = gp2.process_grey_B(self, B, original_height, original_width)
-
-        Grey_img = cv2.merge((grey_B, grey_G, grey_R))
-        Grey_img = Grey_img.astype(np.uint8)
+        Grey_img = self.TaskScheduler("to_grey", R, G, B, 0, original_height, original_width) 
 
         return cv2.cvtColor(Grey_img, cv2.COLOR_BGR2GRAY)
+    
+    def TaskScheduler(self, name, r, g, b, value, height = 0, width = 0):
+        if name == 'intensity':
+            adjusted_R = gp1.apply_intensity_kernel_R(self, r, value)
+            adjusted_B = gp2.apply_intensity_kernel_B(self, b, value)
+            adjusted_G = gp3.apply_intensity_kernel_G(self, g, value)
+            bright_image = cv2.merge((adjusted_R, adjusted_G, adjusted_B))
+            return bright_image
+        elif name == "to_grey":
+            grey_R = gp1.process_grey_R(self, r, height, width)
+            grey_G = gp3.process_grey_G(self, g, height, width)
+            grey_B = gp2.process_grey_B(self, b, height, width)
+
+            Grey_img = cv2.merge((grey_B, grey_G, grey_R))
+            Grey_img = Grey_img.astype(np.uint8)
+            return Grey_img
 
     
 
@@ -50,81 +61,23 @@ class CL_Image_Preprocessing:
         if gray:
             original_height, original_width = img.shape
             v_flat = img.reshape(-1)
-            bright_image = self.apply_intensity_kernel(v_flat, value)
+            bright_image = gp2.apply_intensity_kernel_grey(self, v_flat, value)
             bright_image = bright_image.reshape((original_height, original_width))
         else:
             original_height, original_width, channels = img.shape
             R, G, B = cv2.split(img)
-
-            adjusted_R = gp1.apply_intensity_kernel_R(self, R, value)
-            adjusted_B = gp2.apply_intensity_kernel_B(self, B, value)
-            adjusted_G = gp3.apply_intensity_kernel_G(self, G, value)
+            bright_image = self.TaskScheduler("intensity", R, G, B, value)
             
-            bright_image = cv2.merge((adjusted_R, adjusted_G, adjusted_B))
+            
 
         bright_image = bright_image.astype(np.uint8)
 
         return bright_image
-
-    def apply_intensity_kernel(self, channel, value):
-        """
-        Apply brightness/darkness adjustment to a single channel using OpenCL kernel
-        """
-        bright_kernel = """
-        __kernel void bright(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] + 60.0f <= 255.0f)
-            {
-                V[i] = V[i] + 60.0f;
-            }
-            else
-            {
-                V[i] = 255.0f;
-            }
-        }
-        """
-            
-        dark_kernel = """
-        __kernel void dark(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] - 60.0f >= 0.0f)
-            {
-                V[i] = V[i] - 60.0f;
-            }
-            else
-            {
-                V[i] = 0.0f;
-            }
-        }
-        """
-        
-        channel_flat = channel.reshape(-1)
-        empty_matrix = np.empty_like(channel_flat)
-
-        channel_buff = cl.Buffer(self.ctx, cl.mem_flags.READ_WRITE | cl.mem_flags.COPY_HOST_PTR, hostbuf=channel_flat)
-        result_buff = cl.Buffer(self.ctx, cl.mem_flags.WRITE_ONLY, size=empty_matrix.nbytes)
-
-        if value == 1:
-            prg = cl.Program(self.ctx, bright_kernel).build()
-            prg.bright(self.queue, channel_flat.shape, None, channel_buff)
-        else:
-            prg = cl.Program(self.ctx, dark_kernel).build()
-            prg.dark(self.queue, channel_flat.shape, None, channel_buff)
-                
-
-        result = np.empty_like(channel_flat)
-        cl.enqueue_copy(self.queue, result, channel_buff).wait()
-
-        return result.reshape(channel.shape)
     
     
     
-
-
-
-
-
-
+    
+    
     def Threshhold(self, img):
         img_32 = img.astype(np.float32)  # changed the image from uint8 to float32  
         gray = (len(img_32.shape) == 2)  # check if the image is grey or not 
@@ -150,6 +103,7 @@ class CL_Image_Preprocessing:
             
         return gp1.Threshold_helper(self, v_flat, Thresh_kernel, original_height, original_width)
 
+    
     
 
         

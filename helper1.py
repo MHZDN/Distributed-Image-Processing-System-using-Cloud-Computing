@@ -85,4 +85,3 @@ def Threshold_helper(self, v_flat, Thresh_kernel, original_height, original_widt
   threshed_image = v_flat.reshape((original_height, original_width))  # reshape it in 2D format
   threshed_image = threshed_image.astype(np.uint8)  # to send it back as uint8 image
   return threshed_image
-
