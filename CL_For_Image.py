@@ -9,7 +9,41 @@ class CL_Image_Preprocessing:
     def __init__(self) -> None:
         self.ctx = cl.create_some_context()
         self.queue = cl.CommandQueue(self.ctx)
-
+        self.kernels = {
+            'bright': """
+                __kernel void bright(__global float* V) {
+                    int i = get_global_id(0);
+                    if (V[i] + 60.0f <= 255.0f)
+                        V[i] = V[i] + 60.0f;
+                    else
+                        V[i] = 255.0f;
+                }
+            """,
+            'dark': """
+                __kernel void dark(__global float* V) {
+                    int i = get_global_id(0);
+                    if (V[i] - 60.0f >= 0.0f)
+                        V[i] = V[i] - 60.0f;
+                    else
+                        V[i] = 0.0f;
+                }
+            """,
+            'threshold': """
+                __kernel void Thresh(__global float* V) { 
+                    int i = get_global_id(0);
+                    if (V[i] >= 127.0f) 
+                        V[i] = 255.0f;
+                    else
+                        V[i] = 0.0f;
+                }
+            """,
+            'grey': """
+                __kernel void grayscale(__global float* channel, __global float* result) {
+                    int i = get_global_id(0);
+                    result[i] = channel[i];
+                }
+            """
+        }
     def To_gray_pyopencl(self, img):
         """
         This function takes a 3 channel image 
@@ -32,15 +66,15 @@ class CL_Image_Preprocessing:
     
     def TaskScheduler(self, name, r, g, b, value, height = 0, width = 0):
         if name == 'intensity':
-            adjusted_R = gp1.apply_intensity_kernel_R(self, r, value)
-            adjusted_B = gp2.apply_intensity_kernel_B(self, b, value)
-            adjusted_G = gp3.apply_intensity_kernel_G(self, g, value)
+            adjusted_R = gp1.apply_intensity_kernel_R(self, r, value, self.kernels['bright'], self.kernels['dark'])
+            adjusted_B = gp2.apply_intensity_kernel_B(self, b, value, self.kernels['bright'], self.kernels['dark'])
+            adjusted_G = gp3.apply_intensity_kernel_G(self, g, value, self.kernels['bright'], self.kernels['dark'])
             bright_image = cv2.merge((adjusted_R, adjusted_G, adjusted_B))
             return bright_image
         elif name == "to_grey":
-            grey_R = gp1.process_grey_R(self, r, height, width)
-            grey_G = gp3.process_grey_G(self, g, height, width)
-            grey_B = gp2.process_grey_B(self, b, height, width)
+            grey_R = gp1.process_grey_R(self, r, height, width, self.kernels['grey'])
+            grey_G = gp3.process_grey_G(self, g, height, width, self.kernels['grey'])
+            grey_B = gp2.process_grey_B(self, b, height, width, self.kernels['grey'])
 
             Grey_img = cv2.merge((grey_B, grey_G, grey_R))
             Grey_img = Grey_img.astype(np.uint8)
@@ -61,7 +95,7 @@ class CL_Image_Preprocessing:
         if gray:
             original_height, original_width = img.shape
             v_flat = img.reshape(-1)
-            bright_image = gp2.apply_intensity_kernel_grey(self, v_flat, value)
+            bright_image = gp2.apply_intensity_kernel_grey(self, v_flat, value, self.kernels['bright'], self.kernels['dark'])
             bright_image = bright_image.reshape((original_height, original_width))
         else:
             original_height, original_width, channels = img.shape
@@ -73,9 +107,6 @@ class CL_Image_Preprocessing:
         bright_image = bright_image.astype(np.uint8)
 
         return bright_image
-    
-    
-    
     
     
     def Threshhold(self, img):
@@ -91,17 +122,8 @@ class CL_Image_Preprocessing:
             original_height, original_width = gray_img.shape
             v_flat = gray_img.reshape(-1)
 
-        # kernel that does the threshold 
-        Thresh_kernel = """__kernel void Thresh(__global float* V) { 
-            int i = get_global_id(0);
-            if (V[i] >= 127.0f) 
-                V[i] = 255.0f;
-            else
-                V[i] = 0.0f;
-        }
-        """
             
-        return gp1.Threshold_helper(self, v_flat, Thresh_kernel, original_height, original_width)
+        return gp1.Threshold_helper(self, v_flat, self.kernels['threshold'], original_height, original_width)
 
     
     

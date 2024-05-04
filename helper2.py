@@ -1,6 +1,6 @@
 import pyopencl as cl
 import numpy as np
-def process_grey_B(self, B, height, width):
+def process_grey_B(self, B, height, width, grey_kernel):
   """
   Process a single channel for grayscale conversion using OpenCL
   """
@@ -22,38 +22,10 @@ def process_grey_B(self, B, height, width):
   cl.enqueue_copy(self.queue, result, result_buff).wait()
 
   return result.reshape(height, width)
-def apply_intensity_kernel_B(self, B, value):
+def apply_intensity_kernel_B(self, B, value, bright_kernel, dark_kernel):
         """
         Apply brightness/darkness adjustment to a single channel using OpenCL kernel
-        """
-        bright_kernel = """
-        __kernel void bright(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] + 60.0f <= 255.0f)
-            {
-                V[i] = V[i] + 60.0f;
-            }
-            else
-            {
-                V[i] = 255.0f;
-            }
-        }
-        """
-            
-        dark_kernel = """
-        __kernel void dark(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] - 60.0f >= 0.0f)
-            {
-                V[i] = V[i] - 60.0f;
-            }
-            else
-            {
-                V[i] = 0.0f;
-            }
-        }
-        """
-        
+        """        
         channel_flat = B.reshape(-1)
         empty_matrix = np.empty_like(channel_flat)
 
@@ -72,38 +44,10 @@ def apply_intensity_kernel_B(self, B, value):
         cl.enqueue_copy(self.queue, result, channel_buff).wait()
 
         return result.reshape(B.shape)
-def apply_intensity_kernel_grey(self, channel, value):
+def apply_intensity_kernel_grey(self, channel, value, bright_kernel, dark_kernel):
         """
         Apply brightness/darkness adjustment to a single channel using OpenCL kernel
         """
-        bright_kernel = """
-        __kernel void bright(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] + 60.0f <= 255.0f)
-            {
-                V[i] = V[i] + 60.0f;
-            }
-            else
-            {
-                V[i] = 255.0f;
-            }
-        }
-        """
-            
-        dark_kernel = """
-        __kernel void dark(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] - 60.0f >= 0.0f)
-            {
-                V[i] = V[i] - 60.0f;
-            }
-            else
-            {
-                V[i] = 0.0f;
-            }
-        }
-        """
-        
         channel_flat = channel.reshape(-1)
         empty_matrix = np.empty_like(channel_flat)
 

@@ -1,7 +1,7 @@
 import pyopencl as cl
 import numpy as np
 
-def process_grey_R(self, R, height, width):
+def process_grey_R(self, R, height, width, grey_kernel):
         """
         Process a single channel for grayscale conversion using OpenCL
         """
@@ -11,11 +11,6 @@ def process_grey_R(self, R, height, width):
         channel_buff = cl.Buffer(self.ctx, cl.mem_flags.READ_ONLY | cl.mem_flags.COPY_HOST_PTR, hostbuf=channel_flat)
         result_buff = cl.Buffer(self.ctx, cl.mem_flags.WRITE_ONLY, size=empty_matrix.nbytes)
 
-        grey_kernel = """__kernel void grayscale(__global float* channel, __global float* result) {
-            int i = get_global_id(0);
-            result[i] = channel[i];
-        }"""
-
         prg = cl.Program(self.ctx, grey_kernel).build()
         prg.grayscale(self.queue, (height * width,), None, channel_buff, result_buff)
 
@@ -23,38 +18,10 @@ def process_grey_R(self, R, height, width):
         cl.enqueue_copy(self.queue, result, result_buff).wait()
 
         return result.reshape(height, width)
-def apply_intensity_kernel_R(self, R, value):
+def apply_intensity_kernel_R(self, R, value, bright_kernel, dark_kernel):
         """
         Apply brightness/darkness adjustment to a single channel using OpenCL kernel
         """
-        bright_kernel = """
-        __kernel void bright(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] + 60.0f <= 255.0f)
-            {
-                V[i] = V[i] + 60.0f;
-            }
-            else
-            {
-                V[i] = 255.0f;
-            }
-        }
-        """
-            
-        dark_kernel = """
-        __kernel void dark(__global float* V) {
-            int i = get_global_id(0);
-            if (V[i] - 60.0f >= 0.0f)
-            {
-                V[i] = V[i] - 60.0f;
-            }
-            else
-            {
-                V[i] = 0.0f;
-            }
-        }
-        """
-        
         channel_flat = R.reshape(-1)
         empty_matrix = np.empty_like(channel_flat)
 
@@ -74,6 +41,7 @@ def apply_intensity_kernel_R(self, R, value):
 
         return result.reshape(R.shape)
 def Threshold_helper(self, v_flat, Thresh_kernel, original_height, original_width):
+    
   V_buff = cl.Buffer(self.ctx, cl.mem_flags.READ_WRITE, size=v_flat.nbytes)  # to save the output of thresh operation later in this variable
   cl.enqueue_copy(self.queue, V_buff, v_flat)  # firstly, put the input in this variable
 
