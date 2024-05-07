@@ -1,9 +1,7 @@
 import pyopencl as cl
 import numpy as np
 import cv2
-import helper1 as gp1
-import helper2 as gp2
-import helper3 as gp3
+import serverMaster
 class CL_Image_Preprocessing:
 
     def __init__(self) -> None:
@@ -60,25 +58,26 @@ class CL_Image_Preprocessing:
 
         B, G, R = cv2.split(img)
 
-        Grey_img = self.TaskScheduler("to_grey", R, G, B, 0, original_height, original_width) 
-
+        Grey_img = self.TaskScheduler("to_grey", R, G, B, 0, original_height, original_width)
         return cv2.cvtColor(Grey_img, cv2.COLOR_BGR2GRAY)
     
     def TaskScheduler(self, name, r, g, b, value, height = 0, width = 0):
-        if name == 'intensity':
-            adjusted_R = gp1.apply_intensity_kernel_R(self, r, value, self.kernels['bright'], self.kernels['dark'])
-            adjusted_B = gp2.apply_intensity_kernel_B(self, b, value, self.kernels['bright'], self.kernels['dark'])
-            adjusted_G = gp3.apply_intensity_kernel_G(self, g, value, self.kernels['bright'], self.kernels['dark'])
-            bright_image = cv2.merge((adjusted_R, adjusted_G, adjusted_B))
-            return bright_image
-        elif name == "to_grey":
-            grey_R = gp1.process_grey_R(self, r, height, width, self.kernels['grey'])
-            grey_G = gp3.process_grey_G(self, g, height, width, self.kernels['grey'])
-            grey_B = gp2.process_grey_B(self, b, height, width, self.kernels['grey'])
+        print(f"Sending task to masterTask")
+        return serverMaster.MasterTask(name, r, g, b, value, height, width)
+        # if name == 'intensity':
+        #     adjusted_R = gp1.apply_intensity_kernel_R(self, r, value, self.kernels['bright'], self.kernels['dark'])
+        #     adjusted_B = gp2.apply_intensity_kernel_B(self, b, value, self.kernels['bright'], self.kernels['dark'])
+        #     adjusted_G = gp3.apply_intensity_kernel_G(self, g, value, self.kernels['bright'], self.kernels['dark'])
+        #     bright_image = cv2.merge((adjusted_R, adjusted_G, adjusted_B))
+        #     return bright_image
+        # elif name == "to_grey":
+        #     grey_R = gp1.process_grey_R(self, r, height, width, self.kernels['grey'])
+        #     grey_G = gp3.process_grey_G(self, g, height, width, self.kernels['grey'])
+        #     grey_B = gp2.process_grey_B(self, b, height, width, self.kernels['grey'])
 
-            Grey_img = cv2.merge((grey_B, grey_G, grey_R))
-            Grey_img = Grey_img.astype(np.uint8)
-            return Grey_img
+        #     Grey_img = cv2.merge((grey_B, grey_G, grey_R))
+        #     Grey_img = Grey_img.astype(np.uint8)
+        #     return Grey_img
 
     
 
@@ -95,7 +94,8 @@ class CL_Image_Preprocessing:
         if gray:
             original_height, original_width = img.shape
             v_flat = img.reshape(-1)
-            bright_image = gp2.apply_intensity_kernel_grey(self, v_flat, value, self.kernels['bright'], self.kernels['dark'])
+            # bright_image = gp2.apply_intensity_kernel_grey(self, v_flat, value, self.kernels['bright'], self.kernels['dark'])
+            bright_image = self.TaskScheduler("intensity-grey", v_flat,None,None, value)
             bright_image = bright_image.reshape((original_height, original_width))
         else:
             original_height, original_width, channels = img.shape
@@ -123,7 +123,8 @@ class CL_Image_Preprocessing:
             v_flat = gray_img.reshape(-1)
 
             
-        return gp1.Threshold_helper(self, v_flat, self.kernels['threshold'], original_height, original_width)
+        # return gp1.Threshold_helper(self, v_flat, self.kernels['threshold'], original_height, original_width)
+        return self.TaskScheduler("threshold", v_flat,None,None, -1,original_height,original_width)
 
     
     
