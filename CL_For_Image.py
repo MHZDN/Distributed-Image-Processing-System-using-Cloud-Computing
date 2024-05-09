@@ -1,12 +1,12 @@
-import pyopencl as cl
+# import pyopencl as cl
 import numpy as np
 import cv2
 import serverMaster
 class CL_Image_Preprocessing:
 
     def __init__(self) -> None:
-        self.ctx = cl.create_some_context()
-        self.queue = cl.CommandQueue(self.ctx)
+        # self.ctx = cl.create_some_context()
+        # self.queue = cl.CommandQueue(self.ctx)
         self.kernels = {
             'bright': """
                 __kernel void bright(__global float* V) {

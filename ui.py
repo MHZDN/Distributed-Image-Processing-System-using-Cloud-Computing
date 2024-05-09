@@ -4,6 +4,7 @@ import cv2 as cv
 from flask import Flask, redirect, render_template, request
 from guiAPI import guiAPI
 
+os.environ["PYOPENCL_CTX"] = ""
 api = guiAPI()
 operations=["Gray","Brighten","Darken","Threshold"]
 def list_images_in_folder(folder_path):

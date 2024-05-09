@@ -6,7 +6,8 @@ import helper1 as gp1
 import pyopencl as cl
 
 
-ip="10.0.0.5"
+ip="10.0.0.5" # M1-1
+# ip="10.1.0.5" # M2-1
 port=5051
 #data received from masterVM
 #   ["op","channel","image","value","height","width"]
@@ -136,4 +137,3 @@ while tcpSocket:
     newThread = VMThread(serverAddress[0],serverAddress[1],serverSocket)
     print(f"Starting Thread with:{serverAddress[0]} : {serverAddress[1]} ")
     newThread.start()
-    break
