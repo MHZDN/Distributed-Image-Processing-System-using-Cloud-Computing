@@ -12,10 +12,10 @@ log_file2 = "app.log" # saved logs from the main processing on the cloud
 merged_log_file = "full.log" # all logs
 
 # azure storage account credentials
-storage_account = "datastorageimg" 
-container_name = "logs"
-log_file_name = "app.log"
-destination_path = "app.log"  # Destination path where the log file will be saved
+storage_account = "" # <-- insert storage account
+container_name = "" # <-- insert container name
+log_file_name = "" # <-- insert file name
+destination_path = ""  #<-- insert Destination path where the log file will be saved
 account_key = "" # <--- insert storage account password
 
 os.environ["PYOPENCL_CTX"] = ""
