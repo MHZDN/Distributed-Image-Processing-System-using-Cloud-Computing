@@ -3,9 +3,9 @@ import select
 import socket
 import threading
 from CL_For_Image import CL_Image_Preprocessing
-
-
-
+import logging
+import subprocess
+logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 masterip=socket.gethostbyname(socket.gethostname())
 # masterip="0.0.0.0"
 masterport=5090
@@ -32,7 +32,8 @@ class MainServer(threading.Thread):
                     continue
                 operation = receivedData[0]
                 image=receivedData[1]
-                print(f"Received image with operation:{operation} ")
+                print(f"[Master 1]: Received image with operation:{operation} ")
+                logging.info(f"[Master 1]: Received image with operation:{operation} ")
                 processed=None
                 if operation=="Gray":
                     processed = self.CL.To_gray_pyopencl(image)
@@ -52,10 +53,17 @@ class MainServer(threading.Thread):
                     raise Exception("master processed image is None")
             except OSError as oErr:
                 print("OSError: {0}".format(oErr))
+                logging.error("[Master 1]: OSError: %s", oErr)
             except Exception as e:
                 print("Exception: {0}".format(e))
+                logging.error("[Master 1]: Exception: %s", e)
                 break
-
+    def upload_logs_to_azure():
+        try:
+            subprocess.run(["./upload_logs.sh"], check=True)
+            print("Log file uploaded successfully to Azure Storage.")
+        except subprocess.CalledProcessError as e:
+            print(f"Error uploading log file to Azure Storage: {e}")
     def receive_data(self):
         timeout=5
         # Receive the data from the client
@@ -63,6 +71,7 @@ class MainServer(threading.Thread):
         ready_to_read, _, _ = select.select([self.masterSocket], [], [])
         if ready_to_read:
             print(f"start receiving data")
+            logging.info(f"[Master 1]: start receiving data")
             self.masterSocket.settimeout(timeout)
             while True:
                 try:
@@ -73,21 +82,26 @@ class MainServer(threading.Thread):
                 except socket.timeout:
                 # Timeout occurred, no more data being received
                     break
+            self.upload_logs_to_azure()
         # Deserialize the received data
         array = pickle.loads(data)
         print("returning received array")
+        logging.info("[Master 1]: returning received array")
         return array
 
     def send_data(self, data):
         # Serialize the array
         serialized_data = pickle.dumps(data)
         print("sending serialized")
+        logging.info("[Master 1]: sending serialized")
         # Send the serialized array to the server
         self.masterSocket.sendall(serialized_data)
 
 
+
+
 # def listenHealth():
-    
+
 #     healthSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #     healthSocket.bind((masterip, healthport))
 #     print(f"Start health probe listening on ip:{masterip} , port:{healthport}")
@@ -100,12 +114,13 @@ class MainServer(threading.Thread):
 #         print(f"Health Probe")
 #         sock.send(("done").encode())
 #         sock.close()
-    
+
 def listenServer():
-    
+
     tcpSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     tcpSocket.bind((masterip, masterport))
     print(f"Start listening on ip:{masterip} , port:{masterport}")
+    logging.info(f"[Master 1]: Start listening on ip:{masterip} , port:{masterport}")
     tcpSocket.listen(5)
     while tcpSocket:
         if not tcpSocket:
@@ -115,16 +130,15 @@ def listenServer():
         if(serverAddress[0]=="168.63.129.16"):
             serverSocket.send(("done").encode())
             print(f"Health Probe")
+            logging.info(f"[Master 1]: Health Probe")
             serverSocket.close()
             continue
         newThread = MainServer(serverAddress[0],serverAddress[1],serverSocket)
         print(f"Starting Thread with:{serverAddress[0]} : {serverAddress[1]} ")
+        logging.info(f"[Master 1]: Starting Thread with:{serverAddress[0]} : {serverAddress[1]} ")
         newThread.start()
 
 
 if __name__ == "__main__":
     # threading.Thread(target=listenHealth).start()
     threading.Thread(target=listenServer).start()
-    
-
-

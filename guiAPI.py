@@ -1,8 +1,15 @@
 import pickle
 import select
 import socket
+import logging
 # from CL_For_Image import CL_Image_Preprocessing
 
+# Configure logging
+logging.basicConfig(filename='ui.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger()
+
+# Clear the log file
+open('ui.log', 'w').close()
 
 
 #UK load balancer
@@ -19,10 +26,10 @@ class guiAPI:
         self.sock=None
     def gray(self,img):
         # ip=self.getVmIP()
-        print(f"LBIP:{LOAD_BALANCER_IP}")
+        logger.info(f"LBIP: {LOAD_BALANCER_IP}")
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((LOAD_BALANCER_IP, self.port))
-        print(f"sock connected")
+        logger.info("Socket connected")
         self.start_process("Gray",img)
         op,result = self.receive_data()
         self.sock.close()
@@ -30,8 +37,10 @@ class guiAPI:
         return result
     def threshold(self,img):
         # ip=self.getVmIP()
+        logger.info(f"LBIP: {LOAD_BALANCER_IP}")
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((LOAD_BALANCER_IP, self.port))
+        logger.info("Socket connected")
         self.start_process("Threshold",img)
         op,result = self.receive_data()
         self.sock.close()
@@ -39,8 +48,10 @@ class guiAPI:
         return result
     def bright(self,img):
         # ip=self.getVmIP()
+        logger.info(f"LBIP: {LOAD_BALANCER_IP}")
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((LOAD_BALANCER_IP, self.port))
+        logger.info("Socket connected")
         self.start_process("Brighten",img)
         op,result = self.receive_data()
         self.sock.close()
@@ -48,8 +59,10 @@ class guiAPI:
         return result
     def dark(self,img):
         # ip=self.getVmIP()
+        logger.info(f"LBIP: {LOAD_BALANCER_IP}")
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((LOAD_BALANCER_IP, self.port))
+        logger.info("Socket connected")
         self.start_process("Darken",img)
         op,result = self.receive_data()
         self.sock.close()
@@ -68,14 +81,14 @@ class guiAPI:
             
     def start_process(self,op,image):
         try:
-            print("start sending")
+            logger.info("Start sending")
             self.send_data([op,image])
             
             
         except OSError as oErr:
-            print("OSError: {0}".format(oErr))
+            logger.info(f"OSError occured")
         except Exception as e:
-            print("Exception: {0}".format(e))
+            logger.info(f"Exception occured")
     
     def receive_data(self):
         timeout=5
@@ -83,7 +96,7 @@ class guiAPI:
         data = b""
         ready_to_read, _, _ = select.select([self.sock], [], [])
         if ready_to_read:
-            print(f"start receiving data")
+            logger.info("Start receiving data")
             self.sock.settimeout(timeout)
             while True:
                 try:
@@ -96,7 +109,7 @@ class guiAPI:
                     break
         # Deserialize the received data
         array = pickle.loads(data)
-        print("returning received array")
+        logger.info("Returning received array")
         return array
 
     def send_data(self, data):

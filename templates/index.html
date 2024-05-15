@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>App</title>
     <link rel="stylesheet" href="../static/index.css" />
-  </head>
-  <body>
+</head>
+<body>
     {% block body %}
     <div class="flex-column">
-      <p>Add Image</p>
-      <form
-        action="{{ url_for('addImage') }}"
-        enctype="multipart/form-data"
-        method="POST"
-      >
-        <input type="file" name="img" />
-        <button>Submit</button>
-      </form>
+        <p>Add Image</p>
+        <form action="{{ url_for('addImage') }}" enctype="multipart/form-data" method="POST">
+            <input type="file" name="img" />
+            <button>Submit</button>
+        </form>
     </div>
     <div class="flex-column">
-      <div>
-        <p>Added Images</p>
-        <form action="/resetImages" method="post">
-          <button id="resetImagesBtn" type="submit">Reset images</button>
-        </form>
-      </div>
-      <div id="addedImagesDiv">
-        {%for img in images%}
-        <img src="{{img}}" alt="" />
-        {%endfor%}
-      </div>
+        <div>
+            <p>Added Images</p>
+            <form action="/resetImages" method="post">
+                <button id="resetImagesBtn" type="submit">Reset images</button>
+            </form>
+        </div>
+        <div id="addedImagesDiv">
+            {% for img in images %}
+            <img src="{{img}}" alt="" />
+            {% endfor %}
+        </div>
     </div>
     <form action="/startProcessing" method="post">
-
-    
+        <div class="flex-column">
+            <p>Operation</p>
+            <select name="Operation" id="selectedOperation">
+                {% for op in operations %}
+                <option value="{{op}}">{{op}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <button id="startProcessingBtn">Start Processing</button>
+        </div>
+    </form>
     <div class="flex-column">
-      <p>Operation</p>
-      <select name="Operation" id="selectedOperation">
-        {% for op in operations %}
-        <option value="{{op}}">{{op}}</option>
-        {%endfor%}
-      </select>
-    </div>
-    <div>
-      <button id="startProcessingBtn">Start Processing</button>
-    </div>
-  </form>
-    <div class="flex-column">
-      <p>Output</p>
-      <div id="outputDiv">
-        {% for img in outputImages %}
-                <img src={{img}} alt="">
+        <p>Output</p>
+        <div id="outputDiv">
+            {% for img in outputImages %}
+            <img src={{img}} alt="">
             {% endfor %}
-      </div>
+        </div>
+    </div>
+
+    <!-- New section to display log entries -->
+    <div class="flex-column">
+        <p>Log Entries</p>
+        <ul>
+            {% for entry in log_entries %}
+            <li>{{ entry }}</li>
+            {% endfor %}
+        </ul>
     </div>
     {% endblock %}
-  </body>
+</body>
 </html>

@@ -3,6 +3,22 @@ from werkzeug.utils import secure_filename
 import cv2 as cv
 from flask import Flask, redirect, render_template, request
 from guiAPI import guiAPI
+import subprocess
+import merge_logs as merge
+
+#log files to be merged
+log_file1 = "ui.log"
+log_file2 = "app.log"
+merged_log_file = "full.log"
+# Usage example:
+log_file1 = "ui.log"
+log_file2 = "app.log"
+merged_log_file = "full.log"
+storage_account = "datastorageimg"
+container_name = "logs"
+log_file_name = "app.log"
+destination_path = "app.log"  # Destination path where the log file will be saved
+account_key = "lmVvXXbM0ereZITc9OBKF0/fwi13aAMrReqvwTzuhcE1x/3GYeT2EhPPH5SYf2x9Vqa6OR8XAmXE+ASthjtTrA=="
 
 os.environ["PYOPENCL_CTX"] = ""
 api = guiAPI()
@@ -26,12 +42,25 @@ output_folder = os.path.join('static', 'output')
 app.config['UPLOAD'] = upload_folder
 app.config['OUTPUT'] = output_folder
 
+def download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key):
+    try:
+        # Construct the Azure CLI command to download the log file
+        command = f"az storage blob download --account-name {storage_account} --container-name {container_name} --name {log_file_name} --file {destination_path} --account-key {account_key}"
+        subprocess.run(command, shell=True, check=True)
+        print("Log file downloaded successfully from Azure Storage.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error downloading log file from Azure Storage: {e}")
 
 @app.route("/",methods=['GET','POST'])
 def index():
-    images=list_images_in_folder(app.config['UPLOAD'])
-    outputImages=list_images_in_folder(app.config['OUTPUT'])
-    return render_template('index.html', images=images,outputImages=outputImages,operations=operations)
+    images = list_images_in_folder(app.config['UPLOAD'])
+    outputImages = list_images_in_folder(app.config['OUTPUT'])
+    
+    # Read log entries from the full.log file
+    with open(merged_log_file, 'r') as file:
+        log_entries = file.readlines()
+    
+    return render_template('index.html', images=images, outputImages=outputImages, operations=operations, log_entries=log_entries)
 
 @app.route("/resetImages",methods=['POST'])
 def resetImages():
@@ -63,6 +92,8 @@ def startProcessing():
     #Only 1 image will be processed for now
     inputIm=cv.imread(inputImages[0])
     processedImage=api.processImage(inputIm,selectOp)
+    download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key)
+    merge.merge_and_sort_logs(log_file1, log_file2, merged_log_file)
     print(os.path.join(app.config['OUTPUT'],"out1.png"))
     cv.imwrite(os.path.join(app.config['OUTPUT'],"out1.png"),processedImage)
     return redirect("/")

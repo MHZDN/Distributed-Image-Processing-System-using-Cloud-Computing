@@ -1,0 +1,302 @@
+ * Running on http://127.0.0.1:5000
+2024-05-15 20:10:13,721 - INFO - [Master 1]: Start listening on ip:10.0.0.4 , port:5090
+2024-05-15 20:10:18,496 - INFO - [Master 1]: Health Probe
+2024-05-15 20:10:38,501 - INFO - [Master 1]: Health Probe
+2024-05-15 20:10:58,505 - INFO - [Master 1]: Health Probe
+2024-05-15 20:11:18,521 - INFO - [Master 1]: Health Probe
+2024-05-15 20:11:38,519 - INFO - [Master 1]: Health Probe
+2024-05-15 20:11:51,335 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 59124 
+2024-05-15 20:11:51,337 - INFO - [Master 1]: start receiving data
+2024-05-15 20:11:52,017 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 59121 
+2024-05-15 20:11:52,019 - INFO - [Master 1]: start receiving data
+2024-05-15 20:11:53,102 - ERROR - [Master 1]: Exception: %s
+2024-05-15 20:11:58,179 - INFO - [Master 1]: returning received array
+2024-05-15 20:11:58,180 - INFO - [Master 1]: Received image with operation:Brighten 
+2024-05-15 20:11:58,182 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:11:58,185 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:11:58,189 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:11:58,205 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:11:58,205 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:11:58,206 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:11:58,527 - INFO - [Master 1]: Health Probe
+2024-05-15 20:12:03,211 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:03,217 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:03,218 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:08,236 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:08,244 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:08,256 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:08,258 - INFO - [Master 1]: sending serialized
+2024-05-15 20:12:18,531 - INFO - [Master 1]: Health Probe
+2024-05-15 20:12:27,591 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 59127 
+2024-05-15 20:12:27,594 - INFO - [Master 1]: start receiving data
+2024-05-15 20:12:33,960 - INFO - [Master 1]: returning received array
+2024-05-15 20:12:33,960 - INFO - [Master 1]: Received image with operation:Brighten 
+2024-05-15 20:12:33,963 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:12:33,963 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:12:33,964 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:12:33,974 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:12:33,975 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:12:33,975 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:12:36,711 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 59133 
+2024-05-15 20:12:36,720 - INFO - [Master 1]: start receiving data
+2024-05-15 20:12:38,548 - INFO - [Master 1]: Health Probe
+2024-05-15 20:12:38,986 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:38,987 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:38,987 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:44,009 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:44,009 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:44,010 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:44,015 - INFO - [Master 1]: sending serialized
+2024-05-15 20:12:44,068 - INFO - [Master 1]: returning received array
+2024-05-15 20:12:44,068 - INFO - [Master 1]: Received image with operation:Brighten 
+2024-05-15 20:12:44,071 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:12:44,071 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:12:44,071 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:12:44,082 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:12:44,082 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:12:44,082 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:12:49,094 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:49,097 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:49,098 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:12:54,116 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:54,117 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:54,117 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:12:54,125 - INFO - [Master 1]: sending serialized
+2024-05-15 20:12:58,556 - INFO - [Master 1]: Health Probe
+2024-05-15 20:12:59,564 - INFO - [Master 1]: start receiving data
+2024-05-15 20:13:00,599 - ERROR - [Master 1]: Exception: %s
+2024-05-15 20:13:08,606 - INFO - [Master 1]: start receiving data
+2024-05-15 20:13:08,608 - INFO - [Master 1]: start receiving data
+2024-05-15 20:13:08,609 - ERROR - [Master 1]: OSError
+2024-05-15 20:13:10,771 - INFO - [Master 1]: start receiving data
+2024-05-15 20:13:10,804 - ERROR - [Master 1]: Exception: %s
+2024-05-15 20:13:12,894 - ERROR - [Master 1]: Exception: %s
+2024-05-15 20:13:18,572 - INFO - [Master 1]: Health Probe
+2024-05-15 20:13:34,686 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 59143 
+2024-05-15 20:13:34,687 - INFO - [Master 1]: start receiving data
+2024-05-15 20:13:38,584 - INFO - [Master 1]: Health Probe
+2024-05-15 20:13:41,093 - INFO - [Master 1]: returning received array
+2024-05-15 20:13:41,093 - INFO - [Master 1]: Received image with operation:Darken 
+2024-05-15 20:13:41,096 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:13:41,096 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:13:41,097 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:13:41,107 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:13:41,108 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:13:41,108 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:13:46,129 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:13:46,137 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:13:46,139 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:13:51,152 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:13:51,153 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:13:51,153 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:13:51,155 - INFO - [Master 1]: sending serialized
+2024-05-15 20:13:56,598 - INFO - [Master 1]: start receiving data
+2024-05-15 20:13:57,655 - ERROR - [Master 1]: Exception: %s
+2024-05-15 20:13:58,595 - INFO - [Master 1]: Health Probe
+2024-05-15 20:14:18,596 - INFO - [Master 1]: Health Probe
+2024-05-15 20:14:38,606 - INFO - [Master 1]: Health Probe
+2024-05-15 20:14:58,609 - INFO - [Master 1]: Health Probe
+2024-05-15 20:15:18,626 - INFO - [Master 1]: Health Probe
+2024-05-15 20:15:38,633 - INFO - [Master 1]: Health Probe
+2024-05-15 20:15:58,639 - INFO - [Master 1]: Health Probe
+2024-05-15 20:16:18,653 - INFO - [Master 1]: Health Probe
+2024-05-15 20:16:38,661 - INFO - [Master 1]: Health Probe
+2024-05-15 20:16:58,676 - INFO - [Master 1]: Health Probe
+2024-05-15 20:17:00,603 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 59168 
+2024-05-15 20:17:00,603 - INFO - [Master 1]: start receiving data
+2024-05-15 20:17:07,551 - INFO - [Master 1]: returning received array
+2024-05-15 20:17:07,552 - INFO - [Master 1]: Received image with operation:Gray 
+2024-05-15 20:17:07,559 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:17:07,560 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:17:07,560 - INFO - [ServerMaster]: Start sending
+2024-05-15 20:17:07,575 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:17:07,576 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:17:07,579 - INFO - [ServerMaster]: Start receive process
+2024-05-15 20:17:12,583 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:17:12,585 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:17:12,585 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 20:17:17,600 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:17:17,601 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:17:17,601 - INFO - [ServerMaster]: Returning received array
+2024-05-15 20:17:17,604 - INFO - [Master 1]: sending serialized
+2024-05-15 20:17:18,678 - INFO - [Master 1]: Health Probe
+2024-05-15 20:17:23,324 - INFO - [Master 1]: start receiving data
+2024-05-15 20:17:24,370 - ERROR - [Master 1]: Exception: %s
+2024-05-15 20:17:38,683 - INFO - [Master 1]: Health Probe
+2024-05-15 20:17:58,687 - INFO - [Master 1]: Health Probe
+2024-05-15 20:18:18,693 - INFO - [Master 1]: Health Probe
+2024-05-15 20:18:38,694 - INFO - [Master 1]: Health Probe
+2024-05-15 20:18:58,701 - INFO - [Master 1]: Health Probe
+2024-05-15 20:19:18,715 - INFO - [Master 1]: Health Probe
+2024-05-15 20:19:38,723 - INFO - [Master 1]: Health Probe
+2024-05-15 20:19:58,725 - INFO - [Master 1]: Health Probe
+2024-05-15 20:20:18,728 - INFO - [Master 1]: Health Probe
+2024-05-15 20:20:38,734 - INFO - [Master 1]: Health Probe
+2024-05-15 20:20:58,740 - INFO - [Master 1]: Health Probe
+2024-05-15 20:21:18,745 - INFO - [Master 1]: Health Probe
+2024-05-15 20:21:38,755 - INFO - [Master 1]: Health Probe
+2024-05-15 20:21:58,762 - INFO - [Master 1]: Health Probe
+2024-05-15 20:22:18,778 - INFO - [Master 1]: Health Probe
+2024-05-15 20:22:38,794 - INFO - [Master 1]: Health Probe
+2024-05-15 20:22:58,798 - INFO - [Master 1]: Health Probe
+2024-05-15 20:23:18,809 - INFO - [Master 1]: Health Probe
+2024-05-15 20:23:38,821 - INFO - [Master 1]: Health Probe
+2024-05-15 20:23:58,821 - INFO - [Master 1]: Health Probe
+2024-05-15 20:24:18,824 - INFO - [Master 1]: Health Probe
+2024-05-15 20:24:38,827 - INFO - [Master 1]: Health Probe
+2024-05-15 20:24:58,836 - INFO - [Master 1]: Health Probe
+2024-05-15 20:25:18,843 - INFO - [Master 1]: Health Probe
+2024-05-15 20:25:38,850 - INFO - [Master 1]: Health Probe
+2024-05-15 20:25:58,865 - INFO - [Master 1]: Health Probe
+2024-05-15 20:26:18,878 - INFO - [Master 1]: Health Probe
+2024-05-15 20:26:38,881 - INFO - [Master 1]: Health Probe
+2024-05-15 20:26:58,883 - INFO - [Master 1]: Health Probe
+2024-05-15 20:27:18,885 - INFO - [Master 1]: Health Probe
+2024-05-15 20:27:38,886 - INFO - [Master 1]: Health Probe
+2024-05-15 20:27:58,902 - INFO - [Master 1]: Health Probe
+2024-05-15 20:28:18,904 - INFO - [Master 1]: Health Probe
+2024-05-15 20:28:38,913 - INFO - [Master 1]: Health Probe
+2024-05-15 20:28:58,917 - INFO - [Master 1]: Health Probe
+2024-05-15 20:29:18,930 - INFO - [Master 1]: Health Probe
+2024-05-15 20:29:38,938 - INFO - [Master 1]: Health Probe
+2024-05-15 20:29:58,945 - INFO - [Master 1]: Health Probe
+2024-05-15 20:30:18,950 - INFO - [Master 1]: Health Probe
+2024-05-15 20:30:38,959 - INFO - [Master 1]: Health Probe
+2024-05-15 20:30:58,969 - INFO - [Master 1]: Health Probe
+2024-05-15 20:31:18,978 - INFO - [Master 1]: Health Probe
+2024-05-15 20:31:38,982 - INFO - [Master 1]: Health Probe
+2024-05-15 20:31:58,983 - INFO - [Master 1]: Health Probe
+2024-05-15 20:32:18,994 - INFO - [Master 1]: Health Probe
+2024-05-15 20:32:38,996 - INFO - [Master 1]: Health Probe
+2024-05-15 20:32:59,010 - INFO - [Master 1]: Health Probe
+2024-05-15 20:33:19,021 - INFO - [Master 1]: Health Probe
+2024-05-15 20:33:39,023 - INFO - [Master 1]: Health Probe
+2024-05-15 20:33:59,035 - INFO - [Master 1]: Health Probe
+2024-05-15 20:34:19,038 - INFO - [Master 1]: Health Probe
+2024-05-15 20:34:39,049 - INFO - [Master 1]: Health Probe
+2024-05-15 20:34:59,050 - INFO - [Master 1]: Health Probe
+2024-05-15 20:35:19,063 - INFO - [Master 1]: Health Probe
+2024-05-15 20:35:39,076 - INFO - [Master 1]: Health Probe
+2024-05-15 20:35:59,089 - INFO - [Master 1]: Health Probe
+2024-05-15 20:36:19,091 - INFO - [Master 1]: Health Probe
+2024-05-15 20:36:39,100 - INFO - [Master 1]: Health Probe
+2024-05-15 20:36:59,105 - INFO - [Master 1]: Health Probe
+2024-05-15 20:37:19,114 - INFO - [Master 1]: Health Probe
+2024-05-15 20:37:39,127 - INFO - [Master 1]: Health Probe
+2024-05-15 20:37:59,138 - INFO - [Master 1]: Health Probe
+2024-05-15 20:38:19,146 - INFO - [Master 1]: Health Probe
+2024-05-15 20:38:39,147 - INFO - [Master 1]: Health Probe
+2024-05-15 20:38:59,150 - INFO - [Master 1]: Health Probe
+2024-05-15 20:39:19,158 - INFO - [Master 1]: Health Probe
+2024-05-15 20:39:39,170 - INFO - [Master 1]: Health Probe
+2024-05-15 20:39:59,173 - INFO - [Master 1]: Health Probe
+2024-05-15 20:40:19,182 - INFO - [Master 1]: Health Probe
+2024-05-15 20:40:39,186 - INFO - [Master 1]: Health Probe
+2024-05-15 20:40:59,190 - INFO - [Master 1]: Health Probe
+2024-05-15 20:41:19,192 - INFO - [Master 1]: Health Probe
+2024-05-15 20:41:39,208 - INFO - [Master 1]: Health Probe
+2024-05-15 20:41:59,214 - INFO - [Master 1]: Health Probe
+2024-05-15 20:42:19,214 - INFO - [Master 1]: Health Probe
+2024-05-15 20:42:39,223 - INFO - [Master 1]: Health Probe
+2024-05-15 20:42:59,232 - INFO - [Master 1]: Health Probe
+2024-05-15 20:43:19,238 - INFO - [Master 1]: Health Probe
+2024-05-15 20:43:39,249 - INFO - [Master 1]: Health Probe
+2024-05-15 20:43:59,258 - INFO - [Master 1]: Health Probe
+2024-05-15 20:44:19,263 - INFO - [Master 1]: Health Probe
+2024-05-15 20:44:39,267 - INFO - [Master 1]: Health Probe
+2024-05-15 20:44:59,279 - INFO - [Master 1]: Health Probe
+2024-05-15 20:45:19,292 - INFO - [Master 1]: Health Probe
+2024-05-15 20:45:39,306 - INFO - [Master 1]: Health Probe
+2024-05-15 20:45:59,315 - INFO - [Master 1]: Health Probe
+2024-05-15 20:46:19,321 - INFO - [Master 1]: Health Probe
+2024-05-15 20:46:39,323 - INFO - [Master 1]: Health Probe
+2024-05-15 20:46:59,324 - INFO - [Master 1]: Health Probe
+2024-05-15 20:47:19,328 - INFO - [Master 1]: Health Probe
+2024-05-15 20:47:39,341 - INFO - [Master 1]: Health Probe
+2024-05-15 20:47:59,345 - INFO - [Master 1]: Health Probe
+2024-05-15 20:48:19,345 - INFO - [Master 1]: Health Probe
+2024-05-15 20:48:39,346 - INFO - [Master 1]: Health Probe
+2024-05-15 20:48:59,355 - INFO - [Master 1]: Health Probe
+2024-05-15 20:49:19,361 - INFO - [Master 1]: Health Probe
+2024-05-15 20:49:39,367 - INFO - [Master 1]: Health Probe
+2024-05-15 20:49:59,377 - INFO - [Master 1]: Health Probe
+2024-05-15 20:50:19,391 - INFO - [Master 1]: Health Probe
+2024-05-15 20:50:39,395 - INFO - [Master 1]: Health Probe
+2024-05-15 20:50:59,401 - INFO - [Master 1]: Health Probe
+2024-05-15 20:51:19,408 - INFO - [Master 1]: Health Probe
+2024-05-15 20:51:39,414 - INFO - [Master 1]: Health Probe
+2024-05-15 20:51:59,417 - INFO - [Master 1]: Health Probe
+2024-05-15 20:52:19,431 - INFO - [Master 1]: Health Probe
+2024-05-15 20:52:39,435 - INFO - [Master 1]: Health Probe
+2024-05-15 20:52:59,442 - INFO - [Master 1]: Health Probe
+2024-05-15 20:53:19,451 - INFO - [Master 1]: Health Probe
+2024-05-15 20:53:39,463 - INFO - [Master 1]: Health Probe
+2024-05-15 20:53:59,464 - INFO - [Master 1]: Health Probe
+2024-05-15 20:54:19,476 - INFO - [Master 1]: Health Probe
+2024-05-15 20:54:39,492 - INFO - [Master 1]: Health Probe
+2024-05-15 20:54:59,496 - INFO - [Master 1]: Health Probe
+2024-05-15 20:55:19,502 - INFO - [Master 1]: Health Probe
+2024-05-15 20:55:39,512 - INFO - [Master 1]: Health Probe
+2024-05-15 20:55:59,528 - INFO - [Master 1]: Health Probe
+2024-05-15 20:56:19,542 - INFO - [Master 1]: Health Probe
+2024-05-15 20:56:39,543 - INFO - [Master 1]: Health Probe
+2024-05-15 20:56:59,555 - INFO - [Master 1]: Health Probe
+2024-05-15 20:57:19,561 - INFO - [Master 1]: Health Probe
+2024-05-15 20:57:39,571 - INFO - [Master 1]: Health Probe
+2024-05-15 20:57:59,577 - INFO - [Master 1]: Health Probe
+2024-05-15 20:58:19,584 - INFO - [Master 1]: Health Probe
+2024-05-15 20:58:39,598 - INFO - [Master 1]: Health Probe
+2024-05-15 20:58:59,608 - INFO - [Master 1]: Health Probe
+2024-05-15 20:59:19,611 - INFO - [Master 1]: Health Probe
+2024-05-15 20:59:39,619 - INFO - [Master 1]: Health Probe
+2024-05-15 20:59:59,629 - INFO - [Master 1]: Health Probe
+2024-05-15 21:00:19,630 - INFO - [Master 1]: Health Probe
+2024-05-15 21:00:39,633 - INFO - [Master 1]: Health Probe
+2024-05-15 21:00:59,643 - INFO - [Master 1]: Health Probe
+2024-05-15 21:01:19,654 - INFO - [Master 1]: Health Probe
+2024-05-15 21:01:39,666 - INFO - [Master 1]: Health Probe
+2024-05-15 21:01:59,673 - INFO - [Master 1]: Health Probe
+2024-05-15 21:02:19,686 - INFO - [Master 1]: Health Probe
+2024-05-15 21:02:39,690 - INFO - [Master 1]: Health Probe
+2024-05-15 21:02:59,695 - INFO - [Master 1]: Health Probe
+2024-05-15 21:03:19,711 - INFO - [Master 1]: Health Probe
+2024-05-15 21:03:39,713 - INFO - [Master 1]: Health Probe
+2024-05-15 21:03:59,725 - INFO - [Master 1]: Health Probe
+2024-05-15 21:04:19,725 - INFO - [Master 1]: Health Probe
+2024-05-15 21:04:39,734 - INFO - [Master 1]: Health Probe
+2024-05-15 21:04:59,748 - INFO - [Master 1]: Health Probe
+2024-05-15 21:05:19,750 - INFO - [Master 1]: Health Probe
+2024-05-15 21:05:39,760 - INFO - [Master 1]: Health Probe
+2024-05-15 21:05:59,762 - INFO - [Master 1]: Health Probe
+2024-05-15 21:06:19,771 - INFO - [Master 1]: Health Probe
+2024-05-15 21:06:29,269 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 59442 
+2024-05-15 21:06:29,279 - INFO - [Master 1]: start receiving data
+2024-05-15 21:06:35,848 - INFO - [Master 1]: returning received array
+2024-05-15 21:06:35,849 - INFO - [Master 1]: Received image with operation:Darken 
+2024-05-15 21:06:35,855 - INFO - [ServerMaster]: Start sending
+2024-05-15 21:06:35,856 - INFO - [ServerMaster]: Start sending
+2024-05-15 21:06:35,856 - INFO - [ServerMaster]: Start sending
+2024-05-15 21:06:35,871 - INFO - [ServerMaster]: Start receive process
+2024-05-15 21:06:35,871 - INFO - [ServerMaster]: Start receive process
+2024-05-15 21:06:35,875 - INFO - [ServerMaster]: Start receive process
+2024-05-15 21:06:39,778 - INFO - [Master 1]: Health Probe
+2024-05-15 21:06:40,880 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 21:06:40,880 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 21:06:40,881 - INFO - [ServerMaster]: Start receiving data
+2024-05-15 21:06:45,901 - INFO - [ServerMaster]: Returning received array
+2024-05-15 21:06:45,906 - INFO - [ServerMaster]: Returning received array
+2024-05-15 21:06:45,907 - INFO - [ServerMaster]: Returning received array
+2024-05-15 21:06:45,909 - INFO - [Master 1]: sending serialized
+2024-05-15 21:06:51,345 - INFO - [Master 1]: start receiving data
+2024-05-15 21:06:52,412 - ERROR - [Master 1]: Exception: %s
+2024-05-16 00:06:20,245 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2024-05-16 00:06:20,246 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-16 00:06:22,511 - INFO - 127.0.0.1 - - [16/May/2024 00:06:22] "GET / HTTP/1.1" 200 -
+2024-05-16 00:06:23,346 - INFO - 127.0.0.1 - - [16/May/2024 00:06:23] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2024-05-16 00:06:23,373 - INFO - 127.0.0.1 - - [16/May/2024 00:06:23] "[36mGET /static/output/out1.png HTTP/1.1[0m" 304 -
+2024-05-16 00:06:23,377 - INFO - 127.0.0.1 - - [16/May/2024 00:06:23] "[36mGET /static/uploads/Bird.jpg HTTP/1.1[0m" 304 -
+2024-05-16 00:06:30,247 - INFO - LBIP: 20.8.176.72
+2024-05-16 00:06:30,321 - INFO - Socket connected
+2024-05-16 00:06:30,321 - INFO - Start sending
+2024-05-16 00:06:47,040 - INFO - Start receiving data
+2024-05-16 00:06:52,406 - INFO - Returning received array
