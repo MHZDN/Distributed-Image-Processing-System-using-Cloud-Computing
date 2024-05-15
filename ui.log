@@ -1,17 +1,17 @@
-2024-05-16 00:06:20,245 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2024-05-16 02:10:04,094 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2024-05-16 00:06:20,246 - INFO - [33mPress CTRL+C to quit[0m
-2024-05-16 00:06:22,511 - INFO - 127.0.0.1 - - [16/May/2024 00:06:22] "GET / HTTP/1.1" 200 -
-2024-05-16 00:06:23,346 - INFO - 127.0.0.1 - - [16/May/2024 00:06:23] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2024-05-16 00:06:23,373 - INFO - 127.0.0.1 - - [16/May/2024 00:06:23] "[36mGET /static/output/out1.png HTTP/1.1[0m" 304 -
-2024-05-16 00:06:23,377 - INFO - 127.0.0.1 - - [16/May/2024 00:06:23] "[36mGET /static/uploads/Bird.jpg HTTP/1.1[0m" 304 -
-2024-05-16 00:06:30,247 - INFO - LBIP: 20.8.176.72
-2024-05-16 00:06:30,321 - INFO - Socket connected
-2024-05-16 00:06:30,321 - INFO - Start sending
-2024-05-16 00:06:47,040 - INFO - Start receiving data
-2024-05-16 00:06:52,406 - INFO - Returning received array
-2024-05-16 00:07:01,561 - INFO - 127.0.0.1 - - [16/May/2024 00:07:01] "[32mPOST /startProcessing HTTP/1.1[0m" 302 -
-2024-05-16 00:07:01,608 - INFO - 127.0.0.1 - - [16/May/2024 00:07:01] "GET / HTTP/1.1" 200 -
-2024-05-16 00:07:01,681 - INFO - 127.0.0.1 - - [16/May/2024 00:07:01] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2024-05-16 00:07:01,685 - INFO - 127.0.0.1 - - [16/May/2024 00:07:01] "[36mGET /static/uploads/Bird.jpg HTTP/1.1[0m" 304 -
-2024-05-16 00:07:01,707 - INFO - 127.0.0.1 - - [16/May/2024 00:07:01] "GET /static/output/out1.png HTTP/1.1" 200 -
+2024-05-16 02:10:04,096 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-16 02:10:07,222 - INFO - 127.0.0.1 - - [16/May/2024 02:10:07] "GET / HTTP/1.1" 200 -
+2024-05-16 02:10:07,788 - INFO - 127.0.0.1 - - [16/May/2024 02:10:07] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2024-05-16 02:10:07,822 - INFO - 127.0.0.1 - - [16/May/2024 02:10:07] "[36mGET /static/uploads/mix.jpg HTTP/1.1[0m" 304 -
+2024-05-16 02:10:07,838 - INFO - 127.0.0.1 - - [16/May/2024 02:10:07] "[36mGET /static/output/out1.png HTTP/1.1[0m" 304 -
+2024-05-16 02:10:14,288 - INFO - [Host]: LBIP: 20.8.176.72
+2024-05-16 02:10:14,359 - INFO - [Host]: Socket connected
+2024-05-16 02:10:14,360 - INFO - [Host]: Start sending
+2024-05-16 02:10:36,853 - INFO - [Host]: Start receiving data
+2024-05-16 02:10:47,416 - INFO - [Host]: Returning received array
+2024-05-16 02:10:56,533 - INFO - 127.0.0.1 - - [16/May/2024 02:10:56] "[32mPOST /startProcessing HTTP/1.1[0m" 302 -
+2024-05-16 02:10:56,592 - INFO - 127.0.0.1 - - [16/May/2024 02:10:56] "GET / HTTP/1.1" 200 -
+2024-05-16 02:10:56,669 - INFO - 127.0.0.1 - - [16/May/2024 02:10:56] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2024-05-16 02:10:56,672 - INFO - 127.0.0.1 - - [16/May/2024 02:10:56] "[36mGET /static/uploads/mix.jpg HTTP/1.1[0m" 304 -
+2024-05-16 02:10:56,702 - INFO - 127.0.0.1 - - [16/May/2024 02:10:56] "GET /static/output/out1.png HTTP/1.1" 200 -

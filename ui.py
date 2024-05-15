@@ -7,18 +7,16 @@ import subprocess
 import merge_logs as merge
 
 #log files to be merged
-log_file1 = "ui.log"
-log_file2 = "app.log"
-merged_log_file = "full.log"
-# Usage example:
-log_file1 = "ui.log"
-log_file2 = "app.log"
-merged_log_file = "full.log"
-storage_account = "datastorageimg"
+log_file1 = "ui.log" # saved logs from the ui
+log_file2 = "app.log" # saved logs from the main processing on the cloud
+merged_log_file = "full.log" # all logs
+
+# azure storage account credentials
+storage_account = "datastorageimg" 
 container_name = "logs"
 log_file_name = "app.log"
 destination_path = "app.log"  # Destination path where the log file will be saved
-account_key = "lmVvXXbM0ereZITc9OBKF0/fwi13aAMrReqvwTzuhcE1x/3GYeT2EhPPH5SYf2x9Vqa6OR8XAmXE+ASthjtTrA=="
+account_key = "" # <--- insert storage account password
 
 os.environ["PYOPENCL_CTX"] = ""
 api = guiAPI()
@@ -42,6 +40,7 @@ output_folder = os.path.join('static', 'output')
 app.config['UPLOAD'] = upload_folder
 app.config['OUTPUT'] = output_folder
 
+# function that download the app.log file from the azure storage account using the credentials provided above
 def download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key):
     try:
         # Construct the Azure CLI command to download the log file
@@ -92,8 +91,12 @@ def startProcessing():
     #Only 1 image will be processed for now
     inputIm=cv.imread(inputImages[0])
     processedImage=api.processImage(inputIm,selectOp)
+    # get app.log file from the cloud
     download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key)
+    
+    # merge app.log and ui.log and sort them to get the full final log which will be displayed on the gui
     merge.merge_and_sort_logs(log_file1, log_file2, merged_log_file)
+
     print(os.path.join(app.config['OUTPUT'],"out1.png"))
     cv.imwrite(os.path.join(app.config['OUTPUT'],"out1.png"),processedImage)
     return redirect("/")
