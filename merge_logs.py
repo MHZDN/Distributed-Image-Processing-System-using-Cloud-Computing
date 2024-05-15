@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 
 def merge_and_sort_logs(log_file1, log_file2, merged_log_file):
     try:
@@ -12,13 +13,12 @@ def merge_and_sort_logs(log_file1, log_file2, merged_log_file):
 
         # Sort logs by timestamp
         merged_log.sort(key=lambda x: x.split(' - ')[0])
+
         # Clear the log file
         open(merged_log_file, 'w').close()
-        # Write merged and sorted log to a new file
+
+        # Write merged and sorted log to the full.log file
         with open(merged_log_file, 'w') as merged_file:
             merged_file.writelines(merged_log)
     except Exception as e:
         print(f"An error occurred while merging and sorting logs: {e}")
-
-
-

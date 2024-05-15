@@ -12,11 +12,11 @@ log_file2 = "app.log" # saved logs from the main processing on the cloud
 merged_log_file = "full.log" # all logs
 
 # azure storage account credentials
-storage_account = "" # <-- insert storage account
-container_name = "" # <-- insert container name
-log_file_name = "" # <-- insert file name
-destination_path = ""  #<-- insert Destination path where the log file will be saved
-account_key = "" # <--- insert storage account password
+storage_account = "datastorageimg" 
+container_name = "logs"
+log_file_name = "app.log"
+destination_path = "app.log"  # Destination path where the log file will be saved
+account_key = "lmVvXXbM0ereZITc9OBKF0/fwi13aAMrReqvwTzuhcE1x/3GYeT2EhPPH5SYf2x9Vqa6OR8XAmXE+ASthjtTrA==" # <--- insert storage account password
 
 os.environ["PYOPENCL_CTX"] = ""
 api = guiAPI()
@@ -93,10 +93,9 @@ def startProcessing():
     processedImage=api.processImage(inputIm,selectOp)
     # get app.log file from the cloud
     download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key)
-    
     # merge app.log and ui.log and sort them to get the full final log which will be displayed on the gui
     merge.merge_and_sort_logs(log_file1, log_file2, merged_log_file)
-
+    
     print(os.path.join(app.config['OUTPUT'],"out1.png"))
     cv.imwrite(os.path.join(app.config['OUTPUT'],"out1.png"),processedImage)
     return redirect("/")

@@ -4,12 +4,19 @@ import select
 import socket
 import logging
 
-# Clear the existing log file 
-if os.path.exists('ui.log'):
-    os.remove('ui.log')
+# Ensure the log directory exists
+log_directory = "logs"
+if not os.path.exists(log_directory):
+    os.makedirs(log_directory)
 
 # Configure logging
-logging.basicConfig(filename='ui.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+log_file = os.path.join(log_directory, "ui.log")
+
+# Clear or create the log file
+with open(log_file, "w") as f:
+    pass
+
+logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
