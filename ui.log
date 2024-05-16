@@ -1,3 +1,10 @@
-2024-05-16 04:46:34,548 - INFO - [Host]: LBIP: 20.8.176.72
-2024-05-16 04:46:34,610 - INFO - [Host]: Socket connected
-2024-05-16 04:46:34,610 - INFO - [Host]: Start sending
+2024-05-16 05:19:50,295 - INFO - [Host]: LBIP: 20.8.176.72
+2024-05-16 05:19:50,358 - INFO - [Host]: Socket connected
+2024-05-16 05:19:50,358 - INFO - [Host]: Start sending
+2024-05-16 05:20:12,574 - INFO - [Host]: Start receiving data
+2024-05-16 05:20:18,920 - INFO - [Host]: Returning received array
+2024-05-16 05:20:21,480 - INFO - 127.0.0.1 - - [16/May/2024 05:20:21] "[32mPOST /startProcessing HTTP/1.1[0m" 302 -
+2024-05-16 05:20:21,489 - INFO - 127.0.0.1 - - [16/May/2024 05:20:21] "GET / HTTP/1.1" 200 -
+2024-05-16 05:20:21,506 - INFO - 127.0.0.1 - - [16/May/2024 05:20:21] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2024-05-16 05:20:21,507 - INFO - 127.0.0.1 - - [16/May/2024 05:20:21] "[36mGET /static/uploads/mix.jpg HTTP/1.1[0m" 304 -
+2024-05-16 05:20:21,512 - INFO - 127.0.0.1 - - [16/May/2024 05:20:21] "GET /static/output/out1.png HTTP/1.1" 200 -

@@ -101,8 +101,6 @@ def listenServer():
     
     print(f"Start listening on ip:{masterip}, port:{masterport}")
 
-
-    
     logging.info(f"[Master 1]: Start listening on ip:{masterip}, port:{masterport}")
 
     tcpSocket.listen(5)

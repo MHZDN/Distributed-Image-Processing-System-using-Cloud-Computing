@@ -27,8 +27,8 @@
 2024-05-16 01:45:58,545 - INFO - [ServerMaster]: Returning received array
 2024-05-16 01:45:58,568 - INFO - [Master 1]: sending serialized
 2024-05-16 01:46:04,944 - INFO - [Master 1]: start receiving data
-2024-05-16 04:45:37,025 - INFO - [Host]: LBIP: 20.8.176.72
-2024-05-16 04:45:37,091 - INFO - [Host]: Socket connected
-2024-05-16 04:45:37,091 - INFO - [Host]: Start sending
-2024-05-16 04:45:59,699 - INFO - [Host]: Start receiving data
-2024-05-16 04:46:06,008 - INFO - [Host]: Returning received array
+2024-05-16 05:19:50,295 - INFO - [Host]: LBIP: 20.8.176.72
+2024-05-16 05:19:50,358 - INFO - [Host]: Socket connected
+2024-05-16 05:19:50,358 - INFO - [Host]: Start sending
+2024-05-16 05:20:12,574 - INFO - [Host]: Start receiving data
+2024-05-16 05:20:18,920 - INFO - [Host]: Returning received array

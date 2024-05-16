@@ -7,10 +7,8 @@ import logging
 # Configure logging
 log_file = "ui.log"
 
-
-
+# setup config of the logs
 logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
 logger = logging.getLogger()
 
 LOAD_BALANCER_IP = "20.8.176.72"
