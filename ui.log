@@ -1,22 +1,3 @@
-2024-05-16 02:23:31,507 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-2024-05-16 02:23:31,508 - INFO - [33mPress CTRL+C to quit[0m
-2024-05-16 02:23:35,002 - ERROR - Exception on / [GET]
-Traceback (most recent call last):
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "d:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\ui.py", line 59, in index
-    with open(merged_log_file, 'r') as file:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'full.log'
-2024-05-16 02:23:35,008 - INFO - 127.0.0.1 - - [16/May/2024 02:23:35] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-05-16 04:46:34,548 - INFO - [Host]: LBIP: 20.8.176.72
+2024-05-16 04:46:34,610 - INFO - [Host]: Socket connected
+2024-05-16 04:46:34,610 - INFO - [Host]: Start sending

@@ -11,11 +11,11 @@ def merge_and_sort_logs(log_file1, log_file2, merged_log_file):
         # Merge logs
         merged_log = log1 + log2
 
-        # Sort logs by timestamp
-        merged_log.sort(key=lambda x: x.split(' - ')[0])
+        # Filter out lines that do not contain valid timestamps
+        merged_log = [line for line in merged_log if line.startswith('2')]
 
-        # Clear the log file
-        open(merged_log_file, 'w').close()
+        # Sort logs by timestamp
+        merged_log.sort(key=lambda x: datetime.strptime(x.split(' - ')[0], '%Y-%m-%d %H:%M:%S,%f'))
 
         # Write merged and sorted log to the full.log file
         with open(merged_log_file, 'w') as merged_file:

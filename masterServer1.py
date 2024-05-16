@@ -91,8 +91,20 @@ class MainServer(threading.Thread):
 def listenServer():
     tcpSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     tcpSocket.bind((masterip, masterport))
+    
+    #config log
+    logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    
+    # Clear log
+    with open('app.log', 'w') as log_file:
+            pass
+    
     print(f"Start listening on ip:{masterip}, port:{masterport}")
+
+
+    
     logging.info(f"[Master 1]: Start listening on ip:{masterip}, port:{masterport}")
+
     tcpSocket.listen(5)
     while tcpSocket:
         if not tcpSocket:
@@ -105,15 +117,13 @@ def listenServer():
             logging.info(f"[Master 1]: Health Probe")
             serverSocket.close()
             continue
-        # Recreating app.log file
-        open("app.log", "w").close()
-        logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
         newThread = MainServer(serverAddress[0], serverAddress[1], serverSocket)
+        
         print(f"Starting Thread with:{serverAddress[0]} : {serverAddress[1]} ")
         logging.info(f"[Master 1]: Starting Thread with:{serverAddress[0]} : {serverAddress[1]} ")
         newThread.start()
-
 
 if __name__ == "__main__":
     threading.Thread(target=listenServer).start()

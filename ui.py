@@ -86,6 +86,9 @@ def addImage():
 
 @app.route("/startProcessing",methods=['POST'])
 def startProcessing():
+    # Clear or create the log file
+    with open('ui.log', "w"):
+        pass  
     inputImages=list_images_in_folder(app.config['UPLOAD'])
     selectOp=request.form.get("Operation")
     #Only 1 image will be processed for now
@@ -93,11 +96,15 @@ def startProcessing():
     processedImage=api.processImage(inputIm,selectOp)
     # get app.log file from the cloud
     download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key)
+    
     # merge app.log and ui.log and sort them to get the full final log which will be displayed on the gui
     merge.merge_and_sort_logs(log_file1, log_file2, merged_log_file)
     
     print(os.path.join(app.config['OUTPUT'],"out1.png"))
     cv.imwrite(os.path.join(app.config['OUTPUT'],"out1.png"),processedImage)
     return redirect("/")
+
+# Ensure the Flask app runs when this script is executed directly
 if __name__ == "__main__":
     app.run()
+    

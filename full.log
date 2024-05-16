@@ -1,242 +1,34 @@
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         ^^^^^^^^^^^^^^^^^^^^^^^
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    response = self.full_dispatch_request()
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-    rv = self.dispatch_request()
-    rv = self.handle_user_exception(e)
-    with open(merged_log_file, 'r') as file:
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-  File "D:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-  File "d:\Asu\Senior 1 - Spring\Distributed Computing\Project\Distributed-Image-Processing-System-using-Cloud-Computing\ui.py", line 59, in index
- * Running on http://127.0.0.1:5000
-2024-05-15 23:04:55,691 - INFO - [Master 1]: Start listening on ip:10.0.0.4, port:5090
-2024-05-15 23:05:04,605 - INFO - [Master 1]: Health Probe
-2024-05-15 23:05:24,611 - INFO - [Master 1]: Health Probe
-2024-05-15 23:05:44,616 - INFO - [Master 1]: Health Probe
-2024-05-15 23:06:04,621 - INFO - [Master 1]: Health Probe
-2024-05-15 23:06:24,630 - INFO - [Master 1]: Health Probe
-2024-05-15 23:06:38,032 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 60211 
-2024-05-15 23:06:38,045 - INFO - [Master 1]: start receiving data
-2024-05-15 23:06:44,637 - INFO - [Master 1]: Health Probe
-2024-05-15 23:06:45,913 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 60209 
-2024-05-15 23:06:45,918 - INFO - [Master 1]: start receiving data
-2024-05-15 23:06:46,887 - INFO - [Master 1]: returning received array
-2024-05-15 23:06:46,891 - INFO - [Master 1]: Received image with operation:Brighten 
-2024-05-15 23:06:46,950 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:06:46,991 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:06:47,030 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:06:47,103 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:06:47,104 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:06:47,107 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:06:47,913 - ERROR - [Master 1]: Exception: %s
-2024-05-15 23:06:52,487 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:06:52,500 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:06:52,557 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:07:01,147 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:07:01,174 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:07:01,194 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:07:01,217 - INFO - [Master 1]: sending serialized
-2024-05-15 23:07:01,975 - INFO - [Master 1]: start receiving data
-2024-05-15 23:07:04,650 - INFO - [Master 1]: Health Probe
-2024-05-15 23:07:09,789 - INFO - [Master 1]: returning received array
-2024-05-15 23:07:09,789 - INFO - [Master 1]: Received image with operation:Brighten 
-2024-05-15 23:07:09,818 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:07:09,849 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:07:09,881 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:07:09,949 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:07:09,950 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:07:09,950 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:07:15,347 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:07:15,353 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:07:15,395 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:07:23,358 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:07:24,270 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:07:24,303 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:07:24,324 - INFO - [Master 1]: sending serialized
-2024-05-15 23:07:24,399 - ERROR - [Master 1]: OSError
-2024-05-15 23:07:24,654 - INFO - [Master 1]: Health Probe
-2024-05-15 23:07:25,423 - INFO - [Master 1]: start receiving data
-2024-05-15 23:07:26,495 - ERROR - [Master 1]: Exception: %s
-2024-05-15 23:07:38,270 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 60224 
-2024-05-15 23:07:38,280 - INFO - [Master 1]: start receiving data
-2024-05-15 23:07:44,660 - INFO - [Master 1]: Health Probe
-2024-05-15 23:07:46,743 - INFO - [Master 1]: returning received array
-2024-05-15 23:07:46,743 - INFO - [Master 1]: Received image with operation:Darken 
-2024-05-15 23:07:46,772 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:07:46,800 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:07:46,835 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:07:46,889 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:07:46,889 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:07:46,889 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:07:52,272 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:07:52,322 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:07:52,346 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:08:00,574 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:08:01,035 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:08:01,082 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:08:01,104 - INFO - [Master 1]: sending serialized
-2024-05-15 23:08:04,670 - INFO - [Master 1]: Health Probe
-2024-05-15 23:08:09,525 - INFO - [Master 1]: start receiving data
-2024-05-15 23:08:10,640 - ERROR - [Master 1]: Exception: %s
-2024-05-15 23:08:24,679 - INFO - [Master 1]: Health Probe
-2024-05-15 23:08:44,687 - INFO - [Master 1]: Health Probe
-2024-05-15 23:09:04,692 - INFO - [Master 1]: Health Probe
-2024-05-15 23:09:24,694 - INFO - [Master 1]: Health Probe
-2024-05-15 23:09:44,701 - INFO - [Master 1]: Health Probe
-2024-05-15 23:10:04,712 - INFO - [Master 1]: Health Probe
-2024-05-15 23:10:13,294 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 60252 
-2024-05-15 23:10:13,308 - INFO - [Master 1]: start receiving data
-2024-05-15 23:10:21,542 - INFO - [Master 1]: returning received array
-2024-05-15 23:10:21,542 - INFO - [Master 1]: Received image with operation:Gray 
-2024-05-15 23:10:21,572 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:10:21,601 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:10:21,636 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:10:21,707 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:10:21,707 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:10:21,707 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:10:24,717 - INFO - [Master 1]: Health Probe
-2024-05-15 23:10:27,097 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:10:27,100 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:10:27,163 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:10:35,423 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:10:35,515 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:10:35,618 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:10:35,632 - INFO - [Master 1]: sending serialized
-2024-05-15 23:10:44,713 - INFO - [Master 1]: Health Probe
-2024-05-15 23:10:46,353 - INFO - [Master 1]: start receiving data
-2024-05-15 23:10:47,411 - ERROR - [Master 1]: Exception: %s
-2024-05-15 23:11:04,716 - INFO - [Master 1]: Health Probe
-2024-05-15 23:11:24,729 - INFO - [Master 1]: Health Probe
-2024-05-15 23:11:44,741 - INFO - [Master 1]: Health Probe
-2024-05-15 23:12:04,752 - INFO - [Master 1]: Health Probe
-2024-05-15 23:12:24,763 - INFO - [Master 1]: Health Probe
-2024-05-15 23:12:44,765 - INFO - [Master 1]: Health Probe
-2024-05-15 23:13:04,777 - INFO - [Master 1]: Health Probe
-2024-05-15 23:13:24,783 - INFO - [Master 1]: Health Probe
-2024-05-15 23:13:44,785 - INFO - [Master 1]: Health Probe
-2024-05-15 23:14:04,789 - INFO - [Master 1]: Health Probe
-2024-05-15 23:14:24,801 - INFO - [Master 1]: Health Probe
-2024-05-15 23:14:44,803 - INFO - [Master 1]: Health Probe
-2024-05-15 23:15:04,810 - INFO - [Master 1]: Health Probe
-2024-05-15 23:15:24,821 - INFO - [Master 1]: Health Probe
-2024-05-15 23:15:44,828 - INFO - [Master 1]: Health Probe
-2024-05-15 23:16:04,838 - INFO - [Master 1]: Health Probe
-2024-05-15 23:16:24,839 - INFO - [Master 1]: Health Probe
-2024-05-15 23:16:44,842 - INFO - [Master 1]: Health Probe
-2024-05-15 23:17:04,852 - INFO - [Master 1]: Health Probe
-2024-05-15 23:17:24,856 - INFO - [Master 1]: Health Probe
-2024-05-15 23:17:44,861 - INFO - [Master 1]: Health Probe
-2024-05-15 23:18:04,863 - INFO - [Master 1]: Health Probe
-2024-05-15 23:18:24,874 - INFO - [Master 1]: Health Probe
-2024-05-15 23:18:44,879 - INFO - [Master 1]: Health Probe
-2024-05-15 23:19:04,885 - INFO - [Master 1]: Health Probe
-2024-05-15 23:19:24,895 - INFO - [Master 1]: Health Probe
-2024-05-15 23:19:44,906 - INFO - [Master 1]: Health Probe
-2024-05-15 23:20:04,906 - INFO - [Master 1]: Health Probe
-2024-05-15 23:20:24,906 - INFO - [Master 1]: Health Probe
-2024-05-15 23:20:44,907 - INFO - [Master 1]: Health Probe
-2024-05-15 23:21:04,917 - INFO - [Master 1]: Health Probe
-2024-05-15 23:21:24,917 - INFO - [Master 1]: Health Probe
-2024-05-15 23:21:44,923 - INFO - [Master 1]: Health Probe
-2024-05-15 23:22:04,934 - INFO - [Master 1]: Health Probe
-2024-05-15 23:22:24,946 - INFO - [Master 1]: Health Probe
-2024-05-15 23:22:44,951 - INFO - [Master 1]: Health Probe
-2024-05-15 23:23:04,957 - INFO - [Master 1]: Health Probe
-2024-05-15 23:23:24,962 - INFO - [Master 1]: Health Probe
-2024-05-15 23:23:44,972 - INFO - [Master 1]: Health Probe
-2024-05-15 23:24:04,974 - INFO - [Master 1]: Health Probe
-2024-05-15 23:24:24,978 - INFO - [Master 1]: Health Probe
-2024-05-15 23:24:44,983 - INFO - [Master 1]: Health Probe
-2024-05-15 23:25:04,987 - INFO - [Master 1]: Health Probe
-2024-05-15 23:25:25,000 - INFO - [Master 1]: Health Probe
-2024-05-15 23:25:45,016 - INFO - [Master 1]: Health Probe
-2024-05-15 23:26:05,028 - INFO - [Master 1]: Health Probe
-2024-05-15 23:26:25,032 - INFO - [Master 1]: Health Probe
-2024-05-15 23:26:45,043 - INFO - [Master 1]: Health Probe
-2024-05-15 23:27:05,052 - INFO - [Master 1]: Health Probe
-2024-05-15 23:27:23,771 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 60350 
-2024-05-15 23:27:23,783 - INFO - [Master 1]: start receiving data
-2024-05-15 23:27:25,054 - INFO - [Master 1]: Health Probe
-2024-05-15 23:27:32,788 - INFO - [Master 1]: returning received array
-2024-05-15 23:27:32,788 - INFO - [Master 1]: Received image with operation:Brighten 
-2024-05-15 23:27:32,847 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:27:32,881 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:27:32,919 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:27:32,991 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:27:32,995 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:27:32,995 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:27:38,360 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:27:38,403 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:27:38,433 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:27:45,073 - INFO - [Master 1]: Health Probe
-2024-05-15 23:27:46,490 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:27:46,698 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:27:46,758 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:27:46,775 - INFO - [Master 1]: sending serialized
-2024-05-15 23:27:53,328 - INFO - [Master 1]: start receiving data
-2024-05-15 23:27:54,387 - ERROR - [Master 1]: Exception: %s
-2024-05-15 23:28:05,078 - INFO - [Master 1]: Health Probe
-2024-05-15 23:28:25,083 - INFO - [Master 1]: Health Probe
-2024-05-15 23:28:45,089 - INFO - [Master 1]: Health Probe
-2024-05-15 23:29:05,101 - INFO - [Master 1]: Health Probe
-2024-05-15 23:29:25,114 - INFO - [Master 1]: Health Probe
-2024-05-15 23:29:45,129 - INFO - [Master 1]: Health Probe
-2024-05-15 23:29:58,159 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 60379 
-2024-05-15 23:29:58,197 - INFO - [Master 1]: start receiving data
-2024-05-15 23:30:05,130 - INFO - [Master 1]: Health Probe
-2024-05-15 23:30:06,979 - INFO - [Master 1]: returning received array
-2024-05-15 23:30:06,980 - INFO - [Master 1]: Received image with operation:Gray 
-2024-05-15 23:30:07,010 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:30:07,040 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:30:07,078 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:30:07,145 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:30:07,145 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:30:07,146 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:30:12,520 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:30:12,560 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:30:12,607 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:30:20,807 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:30:20,898 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:30:21,055 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:30:21,073 - INFO - [Master 1]: sending serialized
-2024-05-15 23:30:25,136 - INFO - [Master 1]: Health Probe
-2024-05-15 23:30:28,300 - INFO - [Master 1]: start receiving data
-2024-05-15 23:30:29,444 - ERROR - [Master 1]: Exception: %s
-2024-05-15 23:30:45,148 - INFO - [Master 1]: Health Probe
-2024-05-15 23:31:05,155 - INFO - [Master 1]: Health Probe
-2024-05-15 23:31:25,170 - INFO - [Master 1]: Health Probe
-2024-05-15 23:31:45,185 - INFO - [Master 1]: Health Probe
-2024-05-15 23:32:05,185 - INFO - [Master 1]: Health Probe
-2024-05-15 23:32:25,189 - INFO - [Master 1]: Health Probe
-2024-05-15 23:32:41,432 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 60411 
-2024-05-15 23:32:41,439 - INFO - [Master 1]: start receiving data
-2024-05-15 23:32:45,195 - INFO - [Master 1]: Health Probe
-2024-05-15 23:32:49,394 - INFO - [Master 1]: returning received array
-2024-05-15 23:32:49,395 - INFO - [Master 1]: Received image with operation:Gray 
-2024-05-15 23:32:49,423 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:32:49,451 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:32:49,486 - INFO - [ServerMaster]: Start sending
-2024-05-15 23:32:49,541 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:32:49,542 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:32:49,542 - INFO - [ServerMaster]: Start receive process
-2024-05-15 23:32:54,920 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:32:54,939 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:32:54,995 - INFO - [ServerMaster]: Start receiving data
-2024-05-15 23:33:03,090 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:33:03,274 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:33:03,318 - INFO - [ServerMaster]: Returning received array
-2024-05-15 23:33:03,336 - INFO - [Master 1]: sending serialized
-2024-05-15 23:33:05,209 - INFO - [Master 1]: Health Probe
-2024-05-15 23:33:10,844 - INFO - [Master 1]: start receiving data
-2024-05-15 23:33:11,936 - ERROR - [Master 1]: Exception: %s
-2024-05-16 02:23:31,507 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
-2024-05-16 02:23:31,508 - INFO - [33mPress CTRL+C to quit[0m
-2024-05-16 02:23:35,002 - ERROR - Exception on / [GET]
-2024-05-16 02:23:35,008 - INFO - 127.0.0.1 - - [16/May/2024 02:23:35] "[35m[1mGET / HTTP/1.1[0m" 500 -
-FileNotFoundError: [Errno 2] No such file or directory: 'full.log'
-Traceback (most recent call last):
+2024-05-16 01:42:47,271 - INFO - [Master 1]: Start listening on ip:10.0.0.4, port:5090
+2024-05-16 01:42:50,797 - INFO - [Master 1]: Health Probe
+2024-05-16 01:43:10,805 - INFO - [Master 1]: Health Probe
+2024-05-16 01:43:30,806 - INFO - [Master 1]: Health Probe
+2024-05-16 01:43:50,817 - INFO - [Master 1]: Health Probe
+2024-05-16 01:44:10,828 - INFO - [Master 1]: Health Probe
+2024-05-16 01:44:30,831 - INFO - [Master 1]: Health Probe
+2024-05-16 01:44:50,834 - INFO - [Master 1]: Health Probe
+2024-05-16 01:45:10,848 - INFO - [Master 1]: Health Probe
+2024-05-16 01:45:30,857 - INFO - [Master 1]: Health Probe
+2024-05-16 01:45:36,025 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 61560 
+2024-05-16 01:45:36,037 - INFO - [Master 1]: start receiving data
+2024-05-16 01:45:44,256 - INFO - [Master 1]: returning received array
+2024-05-16 01:45:44,257 - INFO - [Master 1]: Received image with operation:Brighten 
+2024-05-16 01:45:44,290 - INFO - [ServerMaster]: Start sending
+2024-05-16 01:45:44,379 - INFO - [ServerMaster]: Start sending
+2024-05-16 01:45:44,411 - INFO - [ServerMaster]: Start sending
+2024-05-16 01:45:44,526 - INFO - [ServerMaster]: Start receive process
+2024-05-16 01:45:44,527 - INFO - [ServerMaster]: Start receive process
+2024-05-16 01:45:44,527 - INFO - [ServerMaster]: Start receive process
+2024-05-16 01:45:49,838 - INFO - [ServerMaster]: Start receiving data
+2024-05-16 01:45:49,884 - INFO - [ServerMaster]: Start receiving data
+2024-05-16 01:45:49,983 - INFO - [ServerMaster]: Start receiving data
+2024-05-16 01:45:50,884 - INFO - [Master 1]: Health Probe
+2024-05-16 01:45:58,482 - INFO - [ServerMaster]: Returning received array
+2024-05-16 01:45:58,543 - INFO - [ServerMaster]: Returning received array
+2024-05-16 01:45:58,545 - INFO - [ServerMaster]: Returning received array
+2024-05-16 01:45:58,568 - INFO - [Master 1]: sending serialized
+2024-05-16 01:46:04,944 - INFO - [Master 1]: start receiving data
+2024-05-16 04:45:37,025 - INFO - [Host]: LBIP: 20.8.176.72
+2024-05-16 04:45:37,091 - INFO - [Host]: Socket connected
+2024-05-16 04:45:37,091 - INFO - [Host]: Start sending
+2024-05-16 04:45:59,699 - INFO - [Host]: Start receiving data
+2024-05-16 04:46:06,008 - INFO - [Host]: Returning received array
