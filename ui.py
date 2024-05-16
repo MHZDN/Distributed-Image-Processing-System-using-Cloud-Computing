@@ -16,7 +16,7 @@ storage_account = "datastorageimg"
 container_name = "logs"
 log_file_name = "app.log"
 destination_path = "app.log"  # Destination path where the log file will be saved
-account_key = "lmVvXXbM0ereZITc9OBKF0/fwi13aAMrReqvwTzuhcE1x/3GYeT2EhPPH5SYf2x9Vqa6OR8XAmXE+ASthjtTrA==" # <--- insert storage account password
+account_key = "" # <--- insert storage account password
 
 os.environ["PYOPENCL_CTX"] = ""
 api = guiAPI()
