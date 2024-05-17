@@ -59,10 +59,10 @@ class VMThread(threading.Thread):
         }
         
     def run(self)->None:
-        while True:
+        # while True:
             try:
                 receivedData=self.receive_data()
-                if len(receivedData)==0:
+                while len(receivedData)==0:
                     continue
                 print(f"received: {receivedData[0]} : {receivedData[1]} : {receivedData[3]} : ")
                 operation = receivedData[0]
@@ -78,7 +78,7 @@ class VMThread(threading.Thread):
                 print("OSError: {0}".format(oErr))
             except Exception as e:
                 print("Exception: {0}".format(e))
-                break
+                # break
                 
     def receive_data(self):
         timeout=5
@@ -127,7 +127,7 @@ class VMThread(threading.Thread):
 tcpSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcpSocket.bind((ip, port))
 print(f"Start listening on ip:{ip} , port:{port}")
-tcpSocket.listen(1)
+tcpSocket.listen(20)
 
 while tcpSocket:
     if not tcpSocket:

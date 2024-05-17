@@ -1,4 +1,5 @@
 # import pyopencl as cl
+import queue
 import numpy as np
 import cv2
 import serverMaster
@@ -63,7 +64,14 @@ class CL_Image_Preprocessing:
     
     def TaskScheduler(self, name, r, g, b, value, height = 0, width = 0):
         print(f"Sending task to masterTask")
-        return serverMaster.MasterTask(name, r, g, b, value, height, width)
+        result_queue=queue.Queue()
+        mT=serverMaster.masterT(name,r,g,b,value,result_queue,height,width)
+        mT.start()
+        while result_queue.empty():
+            continue
+        res=result_queue.get(block=True)
+        return res
+        # return serverMaster.MasterTask(name, r, g, b, value, height, width)
         # if name == 'intensity':
         #     adjusted_R = gp1.apply_intensity_kernel_R(self, r, value, self.kernels['bright'], self.kernels['dark'])
         #     adjusted_B = gp2.apply_intensity_kernel_B(self, b, value, self.kernels['bright'], self.kernels['dark'])

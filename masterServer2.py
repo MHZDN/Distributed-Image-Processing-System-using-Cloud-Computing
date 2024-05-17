@@ -19,10 +19,10 @@ class MainServer(threading.Thread):
         self.CL = CL_Image_Preprocessing()
 
     def run(self):
-        while True:
+        # while True:
             try:
                 receivedData = self.receive_data()
-                if len(receivedData) == 0:
+                while len(receivedData) == 0:
                     continue
                 operation = receivedData[0]
                 image = receivedData[1]
@@ -49,7 +49,10 @@ class MainServer(threading.Thread):
                 print("Exception: {0}".format(e))
                 logging.error("[Master 2]: Exception: %s")
                 self.upload_logs_to_azure()
-                break
+                # break
+            finally:
+                if self.masterSocket:
+                    self.masterSocket.close()
 
     # run script that uplaod app.log from the master vm to the azure storage account
     def upload_logs_to_azure(self):
@@ -105,7 +108,7 @@ def listenServer():
     
     logging.info(f"[Master 2]: Start listening on ip:{masterip}, port:{masterport}")
 
-    tcpSocket.listen(5)
+    tcpSocket.listen(20)
     while tcpSocket:
         if not tcpSocket:
             continue

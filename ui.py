@@ -75,8 +75,9 @@ def resetImages():
 
 @app.route("/addImage",methods=['POST'])
 def addImage():
+    imageCount=len(list_images_in_folder(app.config['UPLOAD']))
     file = request.files['img']
-    filename = secure_filename(file.filename)
+    filename = secure_filename("image"+str(imageCount)+"."+file.filename.split(".")[-1])
     file.save(os.path.join(app.config['UPLOAD'], filename))
     return redirect("/")
 
@@ -91,19 +92,29 @@ def startProcessing():
         pass  
     inputImages=list_images_in_folder(app.config['UPLOAD'])
     selectOp=request.form.get("Operation")
-    #Only 1 image will be processed for now
-    inputIm=cv.imread(inputImages[0])
-    processedImage=api.processImage(inputIm,selectOp)
+    #process multiple images
+    for i,img in enumerate(inputImages):
+        # processedImage=api.processImage(cv.imread(img),selectOp)
+        api.processImage(cv.imread(img),selectOp)
+    for i in range(len(inputImages)):
+        processedImage=api.receiveProcessed()
+        print(os.path.join(app.config['OUTPUT'],"out"+str(i)+".png"))
+        cv.imwrite(os.path.join(app.config['OUTPUT'],"out"+str(i)+".png"),processedImage)
+        # displayOutIm()
+        
+        
     # get app.log file from the cloud
     download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key)
     
     # merge app.log and ui.log and sort them to get the full final log which will be displayed on the gui
     merge.merge_and_sort_logs(log_file1, log_file2, merged_log_file)
     
-    print(os.path.join(app.config['OUTPUT'],"out1.png"))
-    cv.imwrite(os.path.join(app.config['OUTPUT'],"out1.png"),processedImage)
+    
     return redirect("/")
 
+
+# def displayOutIm():
+#     return redirect("/")
 # Ensure the Flask app runs when this script is executed directly
 if __name__ == "__main__":
     app.run()
