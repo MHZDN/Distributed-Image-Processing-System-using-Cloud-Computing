@@ -1,0 +1,9 @@
+2024-05-17 13:17:51,471 - INFO - [Master 1]: Start listening on ip:10.0.0.4, port:5090
+2024-05-17 13:18:04,348 - INFO - [Master 1]: Health Probe
+2024-05-17 13:18:24,354 - INFO - [Master 1]: Health Probe
+2024-05-17 13:18:44,360 - INFO - [Master 1]: Health Probe
+2024-05-17 13:19:04,366 - INFO - [Master 1]: Health Probe
+2024-05-17 13:19:24,380 - INFO - [Master 1]: Health Probe
+2024-05-17 13:19:40,709 - INFO - [Master 1]: Starting Thread with:41.238.94.188 : 54709 
+2024-05-17 13:19:40,710 - INFO - [Master 1]: start receiving data
+2024-05-17 13:19:44,380 - INFO - [Master 1]: Health Probe

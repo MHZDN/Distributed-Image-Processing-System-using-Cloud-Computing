@@ -8,15 +8,18 @@ import merge_logs as merge
 
 #log files to be merged
 log_file1 = "ui.log" # saved logs from the ui
-log_file2 = "app.log" # saved logs from the main processing on the cloud
+log_file2 = "app1.log" # saved logs from the main processing on the cloud (Master 1)
+log_file3 = "app2.log" # saved logs from the main processing on the cloud (Master 2)
 merged_log_file = "full.log" # all logs
 
 # azure storage account credentials
 storage_account = "datastorageimg" 
 container_name = "logs"
-log_file_name = "app.log"
-destination_path = "app.log"  # Destination path where the log file will be saved
-account_key = "" # <--- insert storage account password
+log_file_name1 = "app1.log"
+destination_path1 = "app1.log"  # Destination path where the log file will be saved
+log_file_name2 = "app2.log"
+destination_path2 = "app2.log"  # Destination path where the log file will be saved
+account_key = "lmVvXXbM0ereZITc9OBKF0/fwi13aAMrReqvwTzuhcE1x/3GYeT2EhPPH5SYf2x9Vqa6OR8XAmXE+ASthjtTrA==" # <--- insert storage account password
 
 os.environ["PYOPENCL_CTX"] = ""
 api = guiAPI()
@@ -104,10 +107,14 @@ def startProcessing():
         
         
     # get app.log file from the cloud
-    download_log_from_azure(storage_account, container_name, log_file_name, destination_path, account_key)
+    download_log_from_azure(storage_account, container_name, log_file_name1, destination_path1, account_key)
+    download_log_from_azure(storage_account, container_name, log_file_name2, destination_path2, account_key)
     
     # merge app.log and ui.log and sort them to get the full final log which will be displayed on the gui
     merge.merge_and_sort_logs(log_file1, log_file2, merged_log_file)
+
+    # merge app.log and ui.log and sort them to get the full final log which will be displayed on the gui
+    merge.merge_and_sort_logs(merged_log_file, log_file3, merged_log_file)
     
     
     return redirect("/")

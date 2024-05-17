@@ -1,0 +1,66 @@
+2024-05-17 13:17:33,209 - INFO - [Master 2]: Start listening on ip:10.1.0.4, port:5090
+2024-05-17 13:17:44,694 - INFO - [Master 2]: Health Probe
+2024-05-17 13:18:04,710 - INFO - [Master 2]: Health Probe
+2024-05-17 13:18:24,714 - INFO - [Master 2]: Health Probe
+2024-05-17 13:18:44,726 - INFO - [Master 2]: Health Probe
+2024-05-17 13:19:04,731 - INFO - [Master 2]: Health Probe
+2024-05-17 13:19:24,732 - INFO - [Master 2]: Health Probe
+2024-05-17 13:19:40,833 - INFO - [Master 2]: Starting Thread with:41.238.94.188 : 54710 
+2024-05-17 13:19:40,843 - INFO - [Master 2]: start receiving data
+2024-05-17 13:19:40,843 - INFO - [Master 2]: Starting Thread with:41.238.94.188 : 23767 
+2024-05-17 13:19:40,844 - INFO - [Master 2]: start receiving data
+2024-05-17 13:19:40,995 - INFO - [Master 2]: Starting Thread with:41.238.94.188 : 23769 
+2024-05-17 13:19:40,996 - INFO - [Master 2]: start receiving data
+2024-05-17 13:19:41,023 - INFO - [Master 2]: Starting Thread with:41.238.94.188 : 54712 
+2024-05-17 13:19:41,054 - INFO - [Master 2]: start receiving data
+2024-05-17 13:19:41,161 - INFO - [Master 2]: Starting Thread with:41.238.94.188 : 54714 
+2024-05-17 13:19:41,181 - INFO - [Master 2]: start receiving data
+2024-05-17 13:19:44,740 - INFO - [Master 2]: Health Probe
+2024-05-17 13:19:49,311 - INFO - [Master 2]: returning received array
+2024-05-17 13:19:49,312 - INFO - [Master 2]: Received image with operation:Threshold 
+2024-05-17 13:19:49,316 - INFO - [Master 2]: returning received array
+2024-05-17 13:19:49,316 - INFO - [Master 2]: Received image with operation:Threshold 
+2024-05-17 13:19:49,359 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:49,360 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:49,376 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:49,376 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:49,399 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:49,400 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:49,411 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:49,435 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:49,452 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:49,459 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:49,474 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:49,483 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:54,413 - INFO - [ServerMaster]: Start receiving data
+2024-05-17 13:19:54,419 - INFO - [ServerMaster]: Start receiving data
+2024-05-17 13:19:54,446 - INFO - [ServerMaster]: Start receiving data
+2024-05-17 13:19:54,446 - INFO - [ServerMaster]: Start receiving data
+2024-05-17 13:19:54,476 - INFO - [ServerMaster]: Start receiving data
+2024-05-17 13:19:54,488 - INFO - [ServerMaster]: Start receiving data
+2024-05-17 13:19:54,501 - INFO - [ServerMaster]: Returning received array
+2024-05-17 13:19:54,559 - INFO - [ServerMaster]: Returning received array
+2024-05-17 13:19:54,564 - INFO - [ServerMaster]: Returning received array
+2024-05-17 13:19:56,270 - INFO - [Master 2]: returning received array
+2024-05-17 13:19:56,332 - INFO - [Master 2]: Received image with operation:Threshold 
+2024-05-17 13:19:56,650 - INFO - [ServerMaster]: Returning received array
+2024-05-17 13:19:56,695 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:56,762 - INFO - [ServerMaster]: Returning received array
+2024-05-17 13:19:56,789 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:56,797 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:56,847 - INFO - [ServerMaster]: Returning received array
+2024-05-17 13:19:56,900 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:56,986 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:57,029 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:57,062 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:57,062 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:57,063 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:57,096 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:57,627 - INFO - [Master 2]: returning received array
+2024-05-17 13:19:57,637 - INFO - [Master 2]: Received image with operation:Threshold 
+2024-05-17 13:19:58,141 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:58,210 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:58,252 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:58,406 - INFO - [ServerMaster]: Start receive process
+2024-05-17 13:19:58,519 - INFO - [ServerMaster]: Start sending
+2024-05-17 13:19:58,553 - INFO - [ServerMaster]: Start receive process
